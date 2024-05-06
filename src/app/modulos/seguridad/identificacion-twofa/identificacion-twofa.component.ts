@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { SeguridadService } from '../../../servicios/seguridad.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UsuarioValidadoModel } from '../../../modelos/usuario.validado.model';
 
 @Component({
   selector: 'app-identificacion-twofa',
@@ -14,7 +16,8 @@ export class IdentificacionTwofaComponent {
 
   constructor(
     private servicioSeguridad: SeguridadService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router 
     ) {
 
   }
@@ -24,6 +27,8 @@ export class IdentificacionTwofaComponent {
     if (datos != null) {
       this.usuarioId = datos._id!;
       this.ConstruirFormulario();
+    }else{
+      this.router.navigate(['/seguridad/identificar-usuario']);
     }
   }
 
@@ -32,16 +37,18 @@ export class IdentificacionTwofaComponent {
       codigo: ['', [Validators.required]]
     })
   }
-
+// validacion codigo segundo factor de autenticacion 
   ValidarCodigo2fa() {
     if(this.fGroup.invalid) {
       alert("Debe ingresar el código");
     }else {
       let codigo2fa = this.ObtenerFormGroup["codigo"].value;
+      console.log(codigo2fa);
       this.servicioSeguridad.ValidarCodigo2FA(this.usuarioId, codigo2fa).subscribe({
-        next: (datos:object) => {
+        next: (datos:UsuarioValidadoModel) => {
           console.log(datos);
-
+          this.servicioSeguridad.AlmacenarDatosUsuarioValidado(datos);
+          this.router.navigate([""]);
         },
         error: (err) => {
           console.log(err);
