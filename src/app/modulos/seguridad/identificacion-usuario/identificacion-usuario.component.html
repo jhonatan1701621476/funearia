@@ -8,7 +8,7 @@
           <i class="material-icons prefix">mail_outline</i>
           <input formControlName="usuario" class="validate" id="email" type="email">
           <label for="email" data-error="wrong" data-success="right">Usuario</label>
-          <div class="show-errors" *ngIf="obtenerFormGroup['usuario'].errors 
+          <div class="show-errors" *ngIf="obtenerFormGroup['usuario'].errors
           && (obtenerFormGroup['usuario'].dirty || obtenerFormGroup['usuario'].touched)">            <strong>Este campo es obligatorio y debe tener el formato de correo electrónico</strong>
           </div>
         </div>
@@ -16,11 +16,12 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">lock_outline</i>
-          <input formControlName="clave" id="password" type="password">            <label for="password">Contraseña</label>
-          <div class="show-errors" *ngIf="obtenerFormGroup['clave'].errors 
+          <input formControlName="clave" id="password" type="password">
+          <label for="password">Contraseña</label>
+          <div class="show-errors" *ngIf="obtenerFormGroup['clave'].errors
           && (obtenerFormGroup['clave'].dirty || obtenerFormGroup['clave'].touched)">
           <strong>Este campo es obligatorio</strong>
-          </div> 
+          </div>
         </div>
       </div>
       <div class="row">
@@ -34,7 +35,7 @@
         </div>
         <div class="input-field col s6 m6 l6">
             <p class="margin right-align medium-small"><a routerLink="/seguridad/recuperar-clave">Olvide mi contraseña</a></p>
-        </div>          
+        </div>
       </div>
     </form>
   </div>

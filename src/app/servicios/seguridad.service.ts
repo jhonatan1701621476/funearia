@@ -11,7 +11,7 @@ import { UsuarioValidadoModel } from '../modelos/usuario.validado.model';
 export class SeguridadService {
   urlBase: string = ConfiguracionRutasBackend.urlSeguridad;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.validacionDeSesion();
   }
 
@@ -19,7 +19,7 @@ export class SeguridadService {
    * Identificar usuario
    * @param usuario
    * @param clave
-   * @returns datos del usuario valido 
+   * @returns datos del usuario valido
   */
   IdentificarUsuario(usuario: string, clave: string): Observable <UsuarioModel> {
     return this.http.post<UsuarioModel>( `${this.urlBase}identificar-usuario`, {
@@ -43,10 +43,24 @@ export class SeguridadService {
     }
   }
 
+  /**
+   * Cerrando Sesión
+   */
+  RemoverDatosUsuarioInvalidado() {
+    let datosUsuario = localStorage.getItem("datos-usuario");
+    let datosSesion = localStorage.getItem("datos-sesion");
+    if(datosUsuario) {
+      localStorage.removeItem("datos-usuario");
+    }
+    if(datosSesion) {
+      localStorage.removeItem("datos-sesion");
+    }
+    this.ActualizarComportamientoUsuario(new UsuarioValidadoModel());
+  }
 
   /**
    * Busca los datos en localstorage de un usuario
-   * @returns 
+   * @returns
    */
   ObtenerDatosUsuarioLS():UsuarioModel | null {
     let datosLS = localStorage.getItem("datos-usuario");
@@ -60,9 +74,9 @@ export class SeguridadService {
 
   /**
    * Validar 2fa
-   * @param idUsuario 
-   * @param codigo 
-   * @returns 
+   * @param idUsuario
+   * @param codigo
+   * @returns
    */
   ValidarCodigo2FA(idUsuario: string, codigo: string): Observable <UsuarioValidadoModel> {
     return this.http.post<UsuarioValidadoModel>( `${this.urlBase}verificar-2fa`, {
@@ -72,8 +86,8 @@ export class SeguridadService {
   }
 
   /**
-   * 
-   * @param datos del usuario validados guiarda en local storagelos datos 
+   *
+   * @param datos del usuario validados guiarda en local storagelos datos
    * del usuario validado
    * @returns respuesta
    */
@@ -84,9 +98,15 @@ export class SeguridadService {
     }else{
       let datosString = JSON.stringify(datos);
       localStorage.setItem("datos-session", datosString);
+      this.ActualizarComportamientoUsuario(datos);
       return true;
     }
+  }
 
+  RecuperarClavePorUsuario(usuario: string): Observable<UsuarioModel> {
+    return this.http.post<UsuarioModel>( `${this.urlBase}recuperar-clave`, {
+      correo: usuario,
+    });
   }
 
   /** Administracion de la sesion de usuario */
@@ -102,9 +122,9 @@ export class SeguridadService {
     if(ls){
       let objUsuario = JSON.parse(ls);
       this.ActualizarComportamientoUsuario(objUsuario);
-      }   
+      }
     }
-    
+
   ActualizarComportamientoUsuario(datos: UsuarioValidadoModel) {
     return this.datosUsuarioValidado.next(datos)
     }
