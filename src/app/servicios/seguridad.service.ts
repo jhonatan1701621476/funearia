@@ -85,6 +85,10 @@ export class SeguridadService {
     });
   }
 
+  RegistrarUsuarioPublico(datos: any): Observable<UsuarioModel>{
+    return this.http.post<UsuarioModel>(`${this.urlBase}usuario-publico`, datos);
+  }
+
   /**
    *
    * @param datos del usuario validados guiarda en local storagelos datos
