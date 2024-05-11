@@ -40,7 +40,7 @@ export class IdentificacionTwofaComponent {
 // validacion codigo segundo factor de autenticacion 
   ValidarCodigo2fa() {
     if(this.fGroup.invalid) {
-      alert("Debe ingresar el código");
+      alert("Debe ingresar el código de verificación enviado a su correo electrónico.");
     }else {
       let codigo2fa = this.ObtenerFormGroup["codigo"].value;
       console.log(codigo2fa);

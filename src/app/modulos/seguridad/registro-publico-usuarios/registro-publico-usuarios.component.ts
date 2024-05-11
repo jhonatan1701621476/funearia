@@ -45,11 +45,11 @@ export class RegistroPublicoUsuariosComponent {
     let campos = this.ObtenerFormGroup;
     let datos = {
       primerNombre: campos["primerNombre"].value,
-      segundoNombre: campos["segugnoNombre"].value,
+      segundoNombre: campos["segundoNombre"].value,
       primerApellido: campos["primerApellido"].value,
       segundgoApellido: campos["segundoApellido"].value,
       correo: campos["correo"].value,
-      celular: campos["celular"].value
+      celular: campos["telefono"].value
     }
     this.servicioSeguridad.RegistrarUsuarioPublico(datos).subscribe({
       next: (respuesta:UsuarioModel) => {

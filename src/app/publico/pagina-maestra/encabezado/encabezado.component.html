@@ -4,11 +4,11 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a routerLink="/seguridad/identificar-usuario">Iniciar Sesión</a></li>
-        <li><a *ngif="sesionActiva" routerLink="/seguridad/cambiar-clave">Cambiar Clave</a></li>
-        <li><a *ngif="sesionActiva" routerLink="/seguridad/cerrar-sesion">Cerrar Sesión</a></li>
+        <li><a *ngIf="sesionActiva" routerLink="/seguridad/cambiar-clave">Cambiar Clave</a></li>
+        <li><a *ngIf="sesionActiva" routerLink="/seguridad/cerrar-sesion">Cerrar Sesión</a></li>
       </ul>
     </div>
-    <div *ngif="sesionActiva"> 
+    <div *ngIf="sesionActiva"> 
       <app-menu-lateral></app-menu-lateral>
   </div>
   
