@@ -24,7 +24,7 @@ export class RegistroPublicoUsuariosComponent {
 
   /**
    * Construcción del formulario con los controles 
-   */
+  */
 
   ConstruirFormulario() {
     this.fGroup = this.fb.group({
@@ -44,12 +44,12 @@ export class RegistroPublicoUsuariosComponent {
   Registrarse() {
     let campos = this.ObtenerFormGroup;
     let datos = {
-      primerNombre: campos["primerNombre"].value,
-      segundoNombre: campos["segundoNombre"].value,
-      primerApellido: campos["primerApellido"].value,
-      segundgoApellido: campos["segundoApellido"].value,
-      correo: campos["correo"].value,
-      celular: campos["telefono"].value
+      PrimerNombre: campos["primerNombre"].value,
+      SegundoNombre: campos["segundoNombre"].value,
+      PrimerApellido: campos["primerApellido"].value,
+      SegundoApellido: campos["segundoApellido"].value,
+      Correo: campos["correo"].value,
+      Celular: campos["telefono"].value
     }
     this.servicioSeguridad.RegistrarUsuarioPublico(datos).subscribe({
       next: (respuesta:UsuarioModel) => {
