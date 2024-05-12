@@ -41,8 +41,13 @@ export class IdentificacionUsuarioComponent {
       this.servicioSeguiridad.IdentificarUsuario(usuario, claveCifrada).subscribe({
         next: (datos:UsuarioModel) => {
           console.log(datos);
-          this.servicioSeguiridad.AlmacenarDatosUsuarioIdentificado(datos)
-          this.router.navigate(['/seguridad/2fa']);
+          if (datos._id == undefined || datos._id == null) {
+            alert("Credenciales incorrectas o falta la verificación del correo electrónico.");
+          } else {
+            if (this.servicioSeguiridad.AlmacenarDatosUsuarioIdentificado(datos)) {
+              this.router.navigate(['/seguridad/2fa']);
+            }
+          }
         },
         error: (err) => {
           console.log(err);

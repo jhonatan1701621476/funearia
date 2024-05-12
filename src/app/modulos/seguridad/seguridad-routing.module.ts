@@ -34,7 +34,7 @@ const routes: Routes = [
     component: RegistroPublicoUsuariosComponent
   },
   {
-    path: "validar-hash-usuario-publico/?:hash",
+    path: "validar-hash-usuario-publico/:hash",
     component: ValidarHashUsuarioPublicoComponent
   }
 ];
