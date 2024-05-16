@@ -26,7 +26,7 @@ export class IdentificacionUsuarioComponent {
 
   ConstruirFormulario() {
     this.fGroup = this.fb.group({
-      usuario: ['', Validators.required, Validators.email], // Validar que sea un email, es un control del formulario
+      usuario: ['', [Validators.required, Validators.email]], // Validar que sea un email, es un control del formulario
       clave: ['', Validators.required] // Validar que no sea vacio, es un control del formulario
     });
   }
