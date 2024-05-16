@@ -1,6 +1,9 @@
+import { MenuModel } from "./menu.model";
 import { UsuarioModel } from "./usuario.model";
 
 export class UsuarioValidadoModel {
-    User?: UsuarioModel;
+    user?: UsuarioModel;
     token?: string = "";
+    menu?: MenuModel[];
+    
 }

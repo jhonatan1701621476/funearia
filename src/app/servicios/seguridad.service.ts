@@ -81,7 +81,7 @@ export class SeguridadService {
   ValidarCodigo2FA(idUsuario: string, codigo: string): Observable <UsuarioValidadoModel> {
     return this.http.post<UsuarioValidadoModel>( `${this.urlBase}verificar-2fa`, {
       usuarioId: idUsuario,
-      codigo2fa: codigo
+      Codigo2fa: codigo
     });
   }
 
