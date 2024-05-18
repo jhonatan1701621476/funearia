@@ -21,7 +21,7 @@ export class SeguridadService {
    * @param clave
    * @returns datos del usuario valido
   */
-  IdentificarUsuario(usuario: string, clave: string): Observable <UsuarioModel> {
+  IdentificarUsuario(usuario: string, clave: string): Observable<UsuarioModel> {
     return this.http.post<UsuarioModel>( `${this.urlBase}identificar-usuario`, {
       correo: usuario,
       clave: clave
@@ -32,7 +32,7 @@ export class SeguridadService {
    * Almacena los datos del usuario
    * @param datos datos del usuario
    */
-  AlmacenarDatosUsuarioIdentificado(datos:UsuarioModel) {
+  AlmacenarDatosUsuarioIdentificado(datos:UsuarioModel): boolean{
     let cadena = JSON.stringify(datos);
     let datosLS = localStorage.getItem("datos-usuario");
     if(datosLS){
