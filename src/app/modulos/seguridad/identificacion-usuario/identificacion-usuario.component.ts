@@ -33,7 +33,7 @@ export class IdentificacionUsuarioComponent {
 
   IdentificarUsuario() {
     if (this.fGroup.invalid){
-      alert("Datos Incompletos..")
+      alert("Datos incompletos...");
     } else {
       let usuario = this.obtenerFormGroup['usuario'].value;
       let clave = this.obtenerFormGroup['clave'].value;
