@@ -46,7 +46,7 @@ export class SeguridadService {
   /**
    * Cerrando Sesión
    */
-  RemoverDatosUsuarioInvalidado() {
+  RemoverDatosUsuarioValidado() {
     let datosUsuario = localStorage.getItem("datos-usuario");
     let datosSesion = localStorage.getItem("datos-sesion");
     if(datosUsuario) {
@@ -96,25 +96,24 @@ export class SeguridadService {
   }
 
   /**
-   *
-   * @param datos del usuario validados guiarda en local storagelos datos
-   * del usuario validado
+   * Guarada en local storage la información del usuario valido
+   * @param datos datos del usuario validado
    * @returns respuesta
    */
   AlmacenarDatosUsuarioValidado(datos: UsuarioValidadoModel): boolean {
-    let datosLS = localStorage.getItem("datos-session");
+    let datosLS = localStorage.getItem("datos-sesion");
     if(datosLS != null){
       return false;
     }else{
       let datosString = JSON.stringify(datos);
-      localStorage.setItem("datos-session", datosString);
+      localStorage.setItem("datos-sesion", datosString);
       this.ActualizarComportamientoUsuario(datos);
       return true;
     }
   }
 
   RecuperarClavePorUsuario(usuario: string): Observable<UsuarioModel> {
-    return this.http.post<UsuarioModel>( `${this.urlBase}recuperar-clave`, {
+    return this.http.post<UsuarioModel>(`${this.urlBase}recuperar-clave`, {
       correo: usuario,
     });
   }
@@ -128,7 +127,7 @@ export class SeguridadService {
    }
 
   validacionDeSesion(){
-    let ls = localStorage.getItem("datos-session");
+    let ls = localStorage.getItem("datos-sesion");
     if(ls){
       let objUsuario = JSON.parse(ls);
       this.ActualizarComportamientoUsuario(objUsuario);
@@ -136,7 +135,7 @@ export class SeguridadService {
     }
 
   ActualizarComportamientoUsuario(datos: UsuarioValidadoModel) {
-    return this.datosUsuarioValidado.next(datos)
+    return this.datosUsuarioValidado.next(datos);
     }
 
 }

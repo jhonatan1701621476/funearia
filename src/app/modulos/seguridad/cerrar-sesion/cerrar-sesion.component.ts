@@ -21,7 +21,7 @@ export class CerrarSesionComponent {
   }
 
   cerrarSesion() {
-    this.servicioSeguridad.RemoverDatosUsuarioInvalidado();
+    this.servicioSeguridad.RemoverDatosUsuarioValidado();
     this.router.navigate([""]);
   }
 
