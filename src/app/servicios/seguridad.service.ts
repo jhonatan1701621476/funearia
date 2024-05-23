@@ -7,6 +7,7 @@ import { UsuarioValidadoModel } from '../modelos/usuario.validado.model';
 import { PermisoModel } from '../modelos/permiso.model';
 import { ItemMenuModel } from '../modelos/item.menu.model';
 import { ConfiguracionMenuLateral } from '../config/configuracion.menu.lateral';
+import { MenuModel } from '../modelos/menu.model';
 
 @Injectable({
   providedIn: 'root'
@@ -58,6 +59,7 @@ export class SeguridadService {
     if(datosSesion) {
       localStorage.removeItem("datos-sesion");
     }
+    localStorage.removeItem("menu-lateral");
     this.ActualizarComportamientoUsuario(new UsuarioValidadoModel());
   }
 
@@ -127,7 +129,7 @@ export class SeguridadService {
 
   ObtenerDatosSesion():Observable<UsuarioValidadoModel> {
     return this.datosUsuarioValidado.asObservable();
-   }
+  }
 
   validacionDeSesion(){
     let ls = localStorage.getItem("datos-sesion");
@@ -141,7 +143,7 @@ export class SeguridadService {
     return this.datosUsuarioValidado.next(datos);
   }
 
-  ConstruirMenuLateral(permisos: PermisoModel[]): ItemMenuModel[] {
+  ConstruirMenuLateral(permisos: MenuModel[]) {
     let menu: ItemMenuModel[]=[];
 
     permisos.forEach((permiso) => {
@@ -157,7 +159,28 @@ export class SeguridadService {
         menu.push(item);
       }
     });
+    this.AlmacenarItemsMenuLateral(menu);
+  }
 
+  /**
+   *
+   * @param itemsMenu items del menu al guardar en local storage
+   */
+  AlmacenarItemsMenuLateral(itemsMenu: ItemMenuModel[]) {
+    let menuStr = JSON.stringify(itemsMenu);
+    localStorage.setItem("menu-lateral", menuStr);
+  }
+
+  /**
+   *
+   * @returns lista con items del menu
+   */
+  ObtenerItemsMenuLateral():ItemMenuModel[] {
+    let menu: ItemMenuModel[] = [];
+    let menuStr = localStorage.getItem("menu-lateral");
+    if(menuStr) {
+      let menu: ItemMenuModel[] = JSON.parse(menuStr);
+    }
     return menu;
   }
 
