@@ -1,1 +1,29 @@
-<h2>Bienvenido al sistema.</h2>
+<!-- Hero Section -->
+<div class="hero">
+    <div class="overlay">
+        <div>
+            <h1>Homenaje a la Vida</h1>
+            <p>Brindamos servicios funerarios con respeto y dignidad</p>
+            <a class="btn-large waves-effect waves-light red darken-4" href="#planes">Conoce nuestros planes</a>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container" id="planes">
+    <div class="row">
+        <div *ngFor="let r of listaRegistros" class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://materializecss.com/images/sample-1.jpg">
+                    <span class="card-title">{{r.nombrePlan}}</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                    <p>{{r.detalle}}</p>
+                    <p>Con una Cantidad de {{r.cantidadBeneficiario}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
