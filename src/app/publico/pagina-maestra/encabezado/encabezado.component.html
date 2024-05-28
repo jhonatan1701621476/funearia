@@ -1,18 +1,17 @@
 <nav class="nav-extended blue">
-    <div class="nav-wrapper">
-      <a routerLink="/inicio" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a *ngIf="!sesionActiva" routerLink="/seguridad/recuperar-clave">Recuperar Contraseña</a></li>
-        <li><a *ngIf="!sesionActiva"routerLink="/seguridad/identificar-usuario">Iniciar Sesión</a></li>
-        <li><a *ngIf="sesionActiva" routerLink="/seguridad/cambiar-clave">Cambiar Clave</a></li>
-        <li><a *ngIf="sesionActiva" routerLink="/seguridad/cerrar-sesion">Cerrar Sesión</a></li>
-      </ul>
-    </div>
+  <div class="nav-wrapper">
+    <a routerLink="/inicio" class="brand-logo">
+      <img src="assets/img/logo.png" alt="Logo" style="height: 50px;">
+    </a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a *ngIf="!sesionActiva" routerLink="/seguridad/recuperar-clave">Recuperar Contraseña</a></li>
+      <li><a *ngIf="!sesionActiva" routerLink="/seguridad/identificar-usuario">Iniciar Sesión</a></li>
+      <li><a *ngIf="sesionActiva" routerLink="/seguridad/cambiar-clave">Cambiar Clave</a></li>
+      <li><a *ngIf="sesionActiva" routerLink="/seguridad/cerrar-sesion">Cerrar Sesión</a></li>
+    </ul>
+  </div>
 </nav>
 <div *ngIf="sesionActiva"> 
   <app-menu-lateral></app-menu-lateral>
 </div>
-  
-  
-  
