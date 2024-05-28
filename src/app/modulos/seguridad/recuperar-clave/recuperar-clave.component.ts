@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SeguridadService } from '../../../servicios/seguridad.service';
+import { UsuarioModel } from '../../../modelos/usuario.model';
 
 @Component({
   selector: 'app-recuperar-clave',
@@ -29,7 +30,7 @@ export class RecuperarClaveComponent {
     } else {
       let usuario = this.obtenerFormGroup["usuario"].value;
       this.servicioSeguridad.RecuperarClavePorUsuario(usuario).subscribe({
-        next: (datos) => {
+        next: (datos:UsuarioModel) => {
           alert("Se ha enviado una nueva contraseña como mensaje de texto al número " + datos.celular);
         },
         error: (err) => {
