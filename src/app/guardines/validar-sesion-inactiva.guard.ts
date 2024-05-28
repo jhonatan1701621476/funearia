@@ -11,9 +11,9 @@ export const ValidarSesionInactivaGuard = () => {
 
   let existeSesion = servicioSeguridad.validacionDeSesion();
     if (existeSesion) {
+      router.navigate(["/inicio"]);
       return false;
     }  
-    router.navigate(["/inicio"]);
     return true;
 
 }

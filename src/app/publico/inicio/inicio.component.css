@@ -30,3 +30,57 @@
     align-items: center;
     justify-content: center;
 }
+
+/* Estilos personalizados */
+#planes {
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-image img {
+    border-bottom: 5px solid #e53935;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-content p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.card-precio {
+    padding: 15px;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #e53935;
+    color: white;
+    border-top: 1px solid #d32f2f;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.btn-floating {
+    background-color: #ff5252 !important;
+}
+
+@media (max-width: 600px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}

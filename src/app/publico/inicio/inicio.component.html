@@ -12,7 +12,7 @@
 <!-- Main Content -->
 <div class="container" id="planes">
     <div class="row">
-        <div *ngFor="let r of listaRegistros" class="col s12 m4">
+        <div *ngFor="let r of listaRegistros" class="col s10 m6">
             <div class="card">
                 <div class="card-image">
                     <img src="https://materializecss.com/images/sample-1.jpg">
@@ -21,7 +21,10 @@
                 </div>
                 <div class="card-content">
                     <p>{{r.detalle}}</p>
-                    <p>Con una Cantidad de {{r.cantidadBeneficiario}}</p>
+                    <p>Cantidad de beneficiarios {{r.cantidadBeneficiario}}</p>
+                </div>
+                <div class="card-precio">
+                    {{r.valorPlan}}
                 </div>
             </div>
         </div>
