@@ -4,31 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario PQRS</title>
+    <style>
+        /* Estilos básicos para hacerlo más atractivo */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 500px; /* Aumentamos el ancho */
+            width: 100%;
+            margin: 0 auto; /* Centramos horizontalmente */
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
+    <form action="/enviar-pqrs" method="post">
+        <h2>Formulario de PQRS</h2>
+        <label for="nombreCompleto">Nombre Completo</label>
+        <input type="text" id="nombreCompleto" name="nombreCompleto" placeholder="Escribe tu nombre completo" required>
 
-  <h3>PQRS</h3>
-  <ul>
-      <li><a href="PQRS.js">PQRS</a></li>
-  </ul>
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" name="correo" placeholder="Escribe tu correo electrónico" required>
 
-    <h1>Formulario PQRS</h1>
-    <form action="/pqr" method="post">
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br>
+        <label for="asunto">Asunto</label>
+        <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto de tu PQRS" required>
 
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required><br>
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" placeholder="Escribe aquí tu solicitud, queja, reclamo o sugerencia" rows="4" required></textarea>
 
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" required><br>
-
-        <input type="submit" value="Enviar">
-        <ul>
-          <button type="submit" class="btn btn-primary"><a href="datapqrs.html">Datos Formulario</a></button>
-      </ul>
+        <button type="submit">Enviar PQRS</button>
     </form>
-
-    <script src="./PQRS.js"></script>
 </body>
 </html>
