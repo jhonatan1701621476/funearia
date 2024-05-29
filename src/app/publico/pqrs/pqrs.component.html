@@ -7,21 +7,18 @@
     <link rel="stylesheet" href="pqrs.component.css">
 </head>
 <body>
-    <form action="/enviar-pqrs" method="post">
+    <form [formGroup]="pqrsForm" (ngSubmit)="onSubmit()">
         <h2>Formulario de PQRS</h2>
         <label for="nombreCompleto">Nombre Completo</label>
-        <input type="text" id="nombreCompleto" name="nombreCompleto" placeholder="Escribe tu nombre completo" required>
-
-        <label for="correo">Correo Electrónico</label>
-        <input type="email" id="correo" name="correo" placeholder="Escribe tu correo electrónico" required>
-
+        <input type="text" id="nombreCompleto" formControlName="nombre" placeholder="Escribe tu nombre completo" required>
+        <label for="correo">Correo Electrónico (Opcional)</label>
+        <input type="email" id="correo" formControlName="email" placeholder="Escribe tu correo electrónico">
         <label for="asunto">Asunto</label>
-        <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto de tu PQRS" required>
-
+        <input type="text" id="asunto" formControlName="asunto" placeholder="Escribe aquí el Asunto" required>
         <label for="descripcion">Descripción</label>
-        <textarea id="descripcion" name="descripcion" placeholder="Escribe aquí tu solicitud, queja, reclamo o sugerencia" rows="4" required></textarea>
-
-        <button type="submit">Enviar PQRS</button>
+        <textarea id="descripcion" formControlName="mensaje" placeholder="Escribe aquí tu solicitud, queja, reclamo o sugerencia" rows="4" required></textarea>
+        <button type="submit" [disabled]="pqrsForm.invalid">Enviar PQRS</button>
     </form>
+    <p *ngIf="confirmationMessage">{{ confirmationMessage }}</p>
 </body>
 </html>
