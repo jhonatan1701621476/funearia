@@ -1,42 +1,49 @@
 <div id="login-page" class="row">
-    <div class="col s12 z-depth-6 card-panel">
-      <form [formGroup]="fgroup" class="login-form">
-        <div class="row">
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">lock_outline</i>
-            <input formControlName="clave" id="password" type="password">
-            <label for="password">Ingrese contraseña actual</label>
-            <div class="show-errors" *ngIf="obtenerFormGroup['clave'].errors
-            && (obtenerFormGroup['clave'].dirty || obtenerFormGroup['clave'].touched)">
-            <strong>Este campo es obligatorio</strong>
-            </div>
-          </div>
-          <div class="input-field col s12">
-            <i class="material-icons prefix">lock_outline</i>
-            <input formControlName="clave" id="password" type="password">
-            <label for="password">Ingresar nueva contraseña</label>
-            <div class="show-errors" *ngIf="obtenerFormGroup['clave'].errors
-            && (obtenerFormGroup['clave'].dirty || obtenerFormGroup['clave'].touched)">
-            <strong>Este campo es obligatorio</strong>
-            </div>
-          </div>
-          <div class="input-field col s12">
-            <i class="material-icons prefix">lock_open</i>
-            <input formControlName="clave" id="password" type="password">
-            <label for="password">Verificar nueva contraseña</label>
-            <div class="show-errors" *ngIf="obtenerFormGroup['clave'].errors
-            && (obtenerFormGroup['clave'].dirty || obtenerFormGroup['clave'].touched)">
-            <strong>Este campo es obligatorio</strong>
-            </div>
+  <div class="col s12 z-depth-6 card-panel">
+    <form [formGroup]="fgroup" class="login-form">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input formControlName="usuario" id="email" type="email">
+          <label for="email">Correo Electrónico</label>
+          <div class="show-errors" *ngIf="obtenerFormGroup['usuario'].errors
+            && (obtenerFormGroup['usuario'].dirty || obtenerFormGroup['usuario'].touched)">
+            <strong>Este campo es obligatorio y debe ser un correo válido.</strong>
           </div>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <button (click)="CambiarClave()" class="btn waves-effect waves-light col s12">Actualizar Contraseña</button>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">lock_outline</i>
+          <input formControlName="claveActual" id="claveActual" type="password">
+          <label for="claveActual">Ingrese contraseña actual</label>
+          <div class="show-errors" *ngIf="obtenerFormGroup['claveActual'].errors
+            && (obtenerFormGroup['claveActual'].dirty || obtenerFormGroup['claveActual'].touched)">
+            <strong>Este campo es obligatorio.</strong>
           </div>
         </div>
-      </form>
-    </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">lock_outline</i>
+          <input formControlName="nuevaClave" id="nuevaClave" type="password">
+          <label for="nuevaClave">Ingrese nueva contraseña</label>
+          <div class="show-errors" *ngIf="obtenerFormGroup['nuevaClave'].errors
+            && (obtenerFormGroup['nuevaClave'].dirty || obtenerFormGroup['nuevaClave'].touched)">
+            <strong>Este campo es obligatorio y debe tener al menos 6 caracteres.</strong>
+          </div>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">lock_open</i>
+          <input formControlName="confirmarNuevaClave" id="confirmarNuevaClave" type="password">
+          <label for="confirmarNuevaClave">Confirmar nueva contraseña</label>
+          <div class="show-errors" *ngIf="obtenerFormGroup['confirmarNuevaClave'].errors
+            && (obtenerFormGroup['confirmarNuevaClave'].dirty || obtenerFormGroup['confirmarNuevaClave'].touched)">
+            <strong>Este campo es obligatorio y debe tener al menos 6 caracteres.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <button (click)="CambiarClave()" class="btn waves-effect waves-light col s12">Actualizar Contraseña</button>
+        </div>
+      </div>
+    </form>
   </div>
+</div>

@@ -9,6 +9,7 @@ import { ParametrosService } from '../../servicios/parametros.service';
 })
 export class InicioComponent {
   listaRegistros: PlanModel[] = [];
+  mostrarContenido: boolean = false; // Variable para mostrar u ocultar contenido
 
   constructor(
     private servicioParametrizacion: ParametrosService
@@ -25,5 +26,10 @@ export class InicioComponent {
         console.log(err);
       }
     });
+  }
+
+  // Método para mostrar contenido
+  mostrarPlanes() {
+    this.mostrarContenido = true;
   }
 }

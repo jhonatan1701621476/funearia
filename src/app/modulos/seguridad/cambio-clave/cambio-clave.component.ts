@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SeguridadService } from '../../../servicios/seguridad.service';
 import { UsuarioModel } from '../../../modelos/usuario.model';
@@ -6,36 +6,44 @@ import { UsuarioModel } from '../../../modelos/usuario.model';
 @Component({
   selector: 'app-cambio-clave',
   templateUrl: './cambio-clave.component.html',
-  styleUrl: './cambio-clave.component.css'
+  styleUrls: ['./cambio-clave.component.css']
 })
-export class CambioClaveComponent {
+export class CambioClaveComponent implements OnInit {
 
   fgroup: FormGroup = new FormGroup({});
 
   constructor(
     private fb: FormBuilder,
     private servicioSeguridad: SeguridadService
-  ) {
-
-  }
+  ) {}
 
   ngOnInit() {
     this.fgroup = this.fb.group({
-      usuario: ['',[Validators.required, Validators.email]]
+      usuario: ['', [Validators.required, Validators.email]],
+      claveActual: ['', [Validators.required]],
+      nuevaClave: ['', [Validators.required, Validators.minLength(6)]],
+      confirmarNuevaClave: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
   CambiarClave() {
-    if(this.fgroup.invalid) {
-      alert("Debe ingresar la nueva contraseña del usuario");
+    if (this.fgroup.invalid || this.fgroup.value.nuevaClave !== this.fgroup.value.confirmarNuevaClave) {
+      alert("Debe ingresar la nueva contraseña del usuario y asegurarse de que las contraseñas coincidan");
+      return;
     } else {
-      let usuario = this.obtenerFormGroup["usuario"].value;
-      this.servicioSeguridad.CambiarClavePorUsuario(usuario).subscribe({
-        next: (datos:UsuarioModel) => {
-          alert("Se ha cambiado la contraseña" + datos.clave)
+      const datos = {
+        usuario: this.fgroup.value.usuario,
+        claveActual: this.fgroup.value.claveActual,
+        nuevaClave: this.fgroup.value.nuevaClave
+      };
+      console.log("datos formulario datos", datos);
+      console.log("datos formulario fgroup", this.fgroup.value);
+      this.servicioSeguridad.CambiarClavePorUsuario(datos.usuario, datos.claveActual, datos.nuevaClave).subscribe({
+        next: (response) => {
+          alert("Se ha cambiado la contraseña correctamente");
         },
-        error: (err:any) => {
-          alert("Ha ocurrido un error cambiando la contraseña.")
+        error: (err) => {
+          alert("Ha ocurrido un error cambiando la contraseña.");
         }
       });
     }
@@ -46,4 +54,3 @@ export class CambioClaveComponent {
   }
 
 }
-

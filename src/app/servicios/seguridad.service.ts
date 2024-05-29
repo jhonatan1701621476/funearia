@@ -116,9 +116,11 @@ export class SeguridadService {
       return true;
     }
   }
-  CambiarClavePorUsuario(usuario: string): Observable<UsuarioModel> {
+  CambiarClavePorUsuario(usuario: string, claveActual: string, nuevaClave: string): Observable<UsuarioModel> {
     return this.http.post<UsuarioModel>(`${this.urlBase}cambiar-clave`, {
-      clave: usuario,
+      usuario: usuario,
+      claveActual : claveActual,
+      nuevaClave: nuevaClave
     });
   } 
 

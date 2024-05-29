@@ -4,13 +4,13 @@
         <div>
             <h1>Homenaje a la Vida</h1>
             <p>Brindamos servicios funerarios con respeto y dignidad</p>
-            <a class="btn-large waves-effect waves-light red darken-4" href="#planes">Conoce nuestros planes</a>
+            <a class="btn-large waves-effect waves-light red darken-4" (click)="mostrarPlanes()">Conoce nuestros planes</a>
         </div>
     </div>
 </div>
 
 <!-- Main Content -->
-<div class="container" id="planes">
+<div class="container" id="planes" *ngIf="mostrarContenido">
     <div class="row">
         <div *ngFor="let r of listaRegistros" class="col s10 m6">
             <div class="card">

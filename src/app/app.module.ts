@@ -11,6 +11,7 @@ import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/er
 import { InicioComponent } from './publico/inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PqrsComponent } from './publico/pqrs/pqrs.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { PqrsComponent } from './publico/pqrs/pqrs.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync('noop')
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
