@@ -9,11 +9,11 @@ export const ValidarSesionInactivaGuard = () => {
   const servicioSeguridad = inject(SeguridadService);
   const router = inject(Router);
 
+
   let existeSesion = servicioSeguridad.validacionDeSesion();
     if (existeSesion) {
       router.navigate(["/inicio"]);
       return false;
     }  
     return true;
-
-}
+};

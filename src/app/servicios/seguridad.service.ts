@@ -141,6 +141,7 @@ export class SeguridadService {
     if(ls){
       let objUsuario = JSON.parse(ls);
       this.ActualizarComportamientoUsuario(objUsuario);
+      return objUsuario;
       }
       return null;
     }
