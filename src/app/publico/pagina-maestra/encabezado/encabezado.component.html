@@ -7,6 +7,7 @@
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a *ngIf="!sesionActiva" routerLink="/seguridad/recuperar-clave">Recuperar Contraseña</a></li>
       <li><a *ngIf="!sesionActiva" routerLink="/seguridad/identificar-usuario">Iniciar Sesión</a></li>
+      <li><a  routerLink="/pqrs">PQRS</a></li>
       <li><a *ngIf="sesionActiva" routerLink="/seguridad/cambiar-clave">Cambiar Clave</a></li>
       <li><a *ngIf="sesionActiva" routerLink="/seguridad/cerrar-sesion">Cerrar Sesión</a></li>
     </ul>

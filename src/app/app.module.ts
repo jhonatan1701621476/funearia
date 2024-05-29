@@ -10,6 +10,7 @@ import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/
 import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/error-de-servidor.component';
 import { InicioComponent } from './publico/inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PqrsComponent } from './publico/pqrs/pqrs.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     MenuLateralComponent,
     RutaNoEncontradaComponent,
     ErrorDeServidorComponent,
-    InicioComponent
+    InicioComponent,
+    PqrsComponent
   ],
   imports: [
     BrowserModule,
