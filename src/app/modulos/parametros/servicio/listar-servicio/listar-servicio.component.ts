@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ParametrosService } from '../../../../servicios/parametros.service';
+import { ParametrosService } from '../../../../servicios/parametros/servicios.service';
 import { PlanModel } from '../../../../modelos/plan.model';
 
 @Component({
@@ -12,8 +12,8 @@ export class ListarServicioComponent {
 
   constructor(
     private parametrosService: ParametrosService
-  ) { 
-    
+  ) {
+
   }
 
   ngOnInit(){
@@ -26,5 +26,5 @@ export class ListarServicioComponent {
       }
     });
   }
-  
+
 }

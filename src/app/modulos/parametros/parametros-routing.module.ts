@@ -4,6 +4,10 @@ import { ListarServicioComponent } from './servicio/listar-servicio/listar-servi
 import { CrearServicioComponent } from './servicio/crear-servicio/crear-servicio.component';
 import { EditarServicioComponent } from './servicio/editar-servicio/editar-servicio.component';
 import { EliminarServicioComponent } from './servicio/eliminar-servicio/eliminar-servicio.component';
+import { ListarClienteComponent } from './cliente/listar-cliente/listar-cliente.component';
+import { CrearClienteComponent } from './cliente/crear-cliente/crear-cliente.component';
+import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
+import { EliminarClienteComponent } from './cliente/eliminar-cliente/eliminar-cliente.component';
 
 const routes: Routes = [
   {
@@ -21,6 +25,22 @@ const routes: Routes = [
   {
     path:"servicio-eliminar/:id",
     component: EliminarServicioComponent
+  },
+  {
+    path: "cliente-listar",
+    component: ListarClienteComponent
+  },
+  {
+    path:"cliente-agregar",
+    component: CrearClienteComponent
+  },
+  {
+    path:"cliente-editar/:id",
+    component: EditarClienteComponent
+  },
+  {
+    path:"cliente-eliminar/:id",
+    component: EliminarClienteComponent
   }
 ];
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PlanModel } from '../../modelos/plan.model';
-import { ParametrosService } from '../../servicios/parametros.service';
+import { ParametrosService } from '../../servicios/parametros/servicios.service';
 
 @Component({
   selector: 'app-inicio',
@@ -14,7 +14,7 @@ export class InicioComponent {
   constructor(
     private servicioParametrizacion: ParametrosService
   ) {
-    
+
   }
 
   ngOnInit() {

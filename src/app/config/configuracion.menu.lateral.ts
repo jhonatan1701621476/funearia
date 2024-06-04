@@ -17,7 +17,12 @@ export namespace ConfiguracionMenuLateral {
             ruta:"/parametros/servicio-listar",
             icono:"<i class='material-icons'>cloud</i>",
             texto:"Servicios"
+        },
+        {
+            id:"665f076912b8403df0d90783",
+            ruta:"/parametros/cliente-listar",
+            icono:"<i class='material-icons'>cloud</i>",
+            texto:"Clientes"
         }
-        
     ];
 }
