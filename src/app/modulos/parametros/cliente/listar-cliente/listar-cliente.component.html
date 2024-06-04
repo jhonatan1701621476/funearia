@@ -22,7 +22,7 @@
           </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let reg of ListaRegistros.registros">
+          <tr *ngFor="let reg of listaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
               <td>{{ reg.nombre }} {{reg.primerApellido}} {{reg.segundoApellido}}</td>
               <td>{{ reg.correo }}</td>
               <td>{{ reg.celular }}</td>
@@ -30,8 +30,20 @@
               <td>
                   <a routerLink="/parametros/cliente-editar/{{reg.id}}" class="btn orange">Editar Registro </a>&nbsp;
                   <a routerLink="/parametros/clinete-eliminar/{{reg.id}}" class="btn red">Eliminar Registro </a>
-
-          </tr>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <pagination-controls
+                      (pageChange)="pag = $event; ListarRegistros()"
+                      previousLabel="Anterior"
+                      nextLabel="Siguiente"
+                      screenReaderPaginationLabel="Navegación"
+                      screenReaderPageLabel="Pagina"
+                      screenReaderCurrentLabel="Pagina Actual">
+                    </pagination-controls>
+                </td>
+            </tr>
       </tbody>
   </table>
   </body>

@@ -10,6 +10,7 @@ import { ListarServicioComponent } from './servicio/listar-servicio/listar-servi
 import { CrearServicioComponent } from './servicio/crear-servicio/crear-servicio.component';
 import { EditarServicioComponent } from './servicio/editar-servicio/editar-servicio.component';
 import { EliminarServicioComponent } from './servicio/eliminar-servicio/eliminar-servicio.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { EliminarServicioComponent } from './servicio/eliminar-servicio/eliminar
   ],
   imports: [
     CommonModule,
-    ParametrosRoutingModule
+    ParametrosRoutingModule,
+    NgxPaginationModule
   ]
 })
 export class ParametrosModule { }
