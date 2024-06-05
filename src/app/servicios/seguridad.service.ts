@@ -8,6 +8,7 @@ import { PermisoModel } from '../modelos/permiso.model';
 import { ItemMenuModel } from '../modelos/item.menu.model';
 import { ConfiguracionMenuLateral } from '../config/configuracion.menu.lateral';
 import { MenuModel } from '../modelos/menu.model';
+import { json } from 'body-parser';
 
 @Injectable({
   providedIn: 'root'
@@ -191,6 +192,16 @@ export class SeguridadService {
       let menu: ItemMenuModel[] = JSON.parse(menuStr);
     }
     return menu;
+  }
+
+  ObtenerTokenLocalStorage():string{
+    let ls = localStorage.getItem("datos-sesion");
+    if (ls){
+      let usuario: UsuarioValidadoModel = JSON.parse(ls);
+      return usuario.token!;
+    }else{
+      return "";
+    }
   }
 
 }

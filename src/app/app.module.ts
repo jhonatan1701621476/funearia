@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms'; // Asegúrate de importar ReactiveFormsModule
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/
 import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/error-de-servidor.component';
 import { InicioComponent } from './publico/inicio/inicio.component';
 import { PqrsComponent } from './publico/pqrs/pqrs.component';
+import { AuthInterceptor } from './interceptors/auth.interceptors';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { PqrsComponent } from './publico/pqrs/pqrs.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
