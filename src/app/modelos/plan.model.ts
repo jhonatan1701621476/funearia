@@ -5,4 +5,5 @@ export class PlanModel{
     detalle?: string;
     valorPlan?: string;
     estado?: string;
+    foto?: string;
 }

@@ -11,6 +11,7 @@ import { CrearServicioComponent } from './servicio/crear-servicio/crear-servicio
 import { EditarServicioComponent } from './servicio/editar-servicio/editar-servicio.component';
 import { EliminarServicioComponent } from './servicio/eliminar-servicio/eliminar-servicio.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
   imports: [
     CommonModule,
     ParametrosRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ParametrosModule { }
