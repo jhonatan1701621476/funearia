@@ -20,7 +20,7 @@ export class ParametrosService {
   listarRegistros():Observable<PlanModel[]>{
     return this.http.get<PlanModel[]>(`${this.urlBase}plan?filter={"limit":${ConfiguracionPaginacion.registrosPorPagina}}`);
   }
-  
+
   listarRegistrosPaginados(pag: number):Observable<PaginadorPlanModel>{
     let limit = ConfiguracionPaginacion.registrosPorPagina;
     let skip = (pag - 1) * limit;

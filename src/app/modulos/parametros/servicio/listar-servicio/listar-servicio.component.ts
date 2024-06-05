@@ -27,7 +27,7 @@ export class ListarServicioComponent {
   ListarRegistros(){
     this.parametrosService.listarRegistrosPaginados(this.pag).subscribe({
       next: (datos) =>{
-        // this.ListaRegistros = datos;        --> ERROR
+        this.ListaRegistros = datos.registros;
         this.total = datos.totalRegistros;
       },
       error: (err) =>{
