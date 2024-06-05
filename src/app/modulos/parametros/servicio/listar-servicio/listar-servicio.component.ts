@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ParametrosService } from '../../../../servicios/parametros/servicios.service';
 import { PlanModel } from '../../../../modelos/plan.model';
+import { ConfiguracionPaginacion } from '../../../../config/configuracion.paginacion';
 
 @Component({
   selector: 'app-listar-servicio',
@@ -9,6 +10,9 @@ import { PlanModel } from '../../../../modelos/plan.model';
 })
 export class ListarServicioComponent {
   ListaRegistros: PlanModel[] = [];
+  pag = 1;
+  total = 0;
+  registroPorPagina = ConfiguracionPaginacion.registrosPorPagina;
 
   constructor(
     private parametrosService: ParametrosService
@@ -17,9 +21,14 @@ export class ListarServicioComponent {
   }
 
   ngOnInit(){
-    this.parametrosService.listarRegistros().subscribe({
+    this.ListarRegistros();
+  }
+
+  ListarRegistros(){
+    this.parametrosService.listarRegistrosPaginados(this.pag).subscribe({
       next: (datos) =>{
-        this.ListaRegistros = datos;
+        // this.ListaRegistros = datos;        --> ERROR
+        this.total = datos.totalRegistros;
       },
       error: (err) =>{
         alert('Error al cargar los datos');
