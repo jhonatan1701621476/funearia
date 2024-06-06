@@ -32,8 +32,16 @@ export class ParametrosService {
     return this.http.post(`${this.urlBase}plan`, registro);
   }
 
+  EditarRegistro(registro: PlanModel):Observable<PlanModel>{
+    return this.http.put(`${this.urlBase}plan/${registro.id}`, registro);
+  }
+
   CargarArchivo(formData: FormData): Observable<ArchivoModel> {
     return this.http.post<ArchivoModel>(`${this.urlBase}cargar-archivo-plan`, formData);
+  }
+
+  BUscarRegistro(id: number): Observable<PlanModel>{
+    return this.http.get<PlanModel>(`${this.urlBase}plan/${id}`);
   }
 
 }
