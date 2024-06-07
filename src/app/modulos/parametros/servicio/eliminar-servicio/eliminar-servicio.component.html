@@ -1,1 +1,38 @@
-<p>eliminar-servicio works!</p>
+<fieldset class="center container">
+    <legend>Eliminación de Planes</legend>
+    <div class="row">
+        <div class="row">
+            <div class="col s12">
+                <strong>¿Está seguro de eliminar el plan?</strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="showImage center-align">
+                <img src="{{ BASE_URL }}ObtenerArchivo/1/{{ nombre }}" class="imagenPlan" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s4">
+                <strong>Nombre:</strong> {{ nombre }}
+            </div>
+            <div class="col s4">
+                <strong>cantidadBeneficiario:</strong> {{ cantidadBeneficiario}}
+            </div>
+            <div class="col s4">
+                <strong>Detalle:</strong> {{ detalle }}
+            </div>
+            <div class="col s4">
+                <strong>Valor:</strong> {{ valorPlan }}
+            </div>
+            <div class="col s4">
+                <strong>Estado:</strong> {{ estado }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <a routerLink="/parametros/servicio-listar" class="btn red">Cancelar</a>&nbsp;
+                <button (click)="EliminarRegistro()" class="btn waves-effect waves-light">Confirmar</button>
+            </div>
+        </div>
+    </div>
+  </fieldset>

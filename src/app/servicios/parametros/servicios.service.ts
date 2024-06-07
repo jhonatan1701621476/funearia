@@ -40,8 +40,12 @@ export class ParametrosService {
     return this.http.post<ArchivoModel>(`${this.urlBase}cargar-archivo-plan`, formData);
   }
 
-  BUscarRegistro(id: number): Observable<PlanModel>{
+  BuscarRegistro(id: number): Observable<PlanModel>{
     return this.http.get<PlanModel>(`${this.urlBase}plan/${id}`);
+  }
+
+  EliminarRegistro(id: number): Observable<any>{
+    return this.http.delete<any>(`${this.urlBase}plan/${id}`);
   }
 
 }

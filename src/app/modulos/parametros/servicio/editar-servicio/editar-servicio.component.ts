@@ -37,7 +37,7 @@ export class EditarServicioComponent {
   }
 
   BuscarRegistro(){
-    this.servicio.BUscarRegistro(this.recordId).subscribe({
+    this.servicio.BuscarRegistro(this.recordId).subscribe({
       next: (datos: PlanModel) =>{
         this.obtenerFgDatos["id"].setValue(datos.id);
         this.obtenerFgDatos["nombre"].setValue(datos.nombrePlan);
