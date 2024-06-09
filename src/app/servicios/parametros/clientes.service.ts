@@ -14,7 +14,7 @@ export class ClientesService {
   urlBase: string = ConfiguracionRutasBackend.urlNegocio;
   constructor(private http: HttpClient, private servicioseguridad: SeguridadService) {
     this.token = this.servicioseguridad.ObtenerTokenLocalStorage();
-   }
+  }
 
   listarRegistros(pag: number):Observable<PaginadorClienteModel>{
     let limit = ConfiguracionPaginacion.registrosPorPagina;

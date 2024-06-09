@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
-import { ClientesService } from '../../../../servicios/parametros/clientes.service';
-import { ClienteModel } from '../../../../modelos/cliente.model';
+import { BeneficiarioModel } from '../../../../modelos/beneficiario.model';
 import { ConfiguracionPaginacion } from '../../../../config/configuracion.paginacion';
+import { BeneficiariosService } from '../../../../servicios/parametros/beneficiarios.service';
 
 @Component({
-  selector: 'app-listar-cliente',
-  templateUrl: './listar-cliente.component.html',
-  styleUrl: './listar-cliente.component.css'
+  selector: 'app-listar-beneficiario',
+  templateUrl: './listar-beneficiario.component.html',
+  styleUrl: './listar-beneficiario.component.css'
 })
-export class ListarClienteComponent {
-  listaRegistros: ClienteModel[] = [];
+export class ListarBeneficiarioComponent {
+  listaRegistros: BeneficiarioModel[] = [];
   pag = 1;
   total = 0;
   registroPorPagina = ConfiguracionPaginacion.registrosPorPagina;
   constructor(
-    private servicioCliente: ClientesService
+    private servicioBeneficiario: BeneficiariosService
   ) {
 
   }
@@ -24,7 +24,7 @@ export class ListarClienteComponent {
   }
 
   ListarRegistros(){
-    this.servicioCliente.listarRegistros(this.pag).subscribe({
+    this.servicioBeneficiario.listarRegistros(this.pag).subscribe({
       next: (datos) =>{
         this.listaRegistros = datos.registros;
         this.total = datos.totalRegistros;
@@ -34,4 +34,5 @@ export class ListarClienteComponent {
       }
     });
   }
+
 }

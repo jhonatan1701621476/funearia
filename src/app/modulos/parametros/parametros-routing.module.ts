@@ -8,6 +8,14 @@ import { ListarClienteComponent } from './cliente/listar-cliente/listar-cliente.
 import { CrearClienteComponent } from './cliente/crear-cliente/crear-cliente.component';
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
 import { EliminarClienteComponent } from './cliente/eliminar-cliente/eliminar-cliente.component';
+import { ListarBeneficiarioComponent } from './beneficiario/listar-beneficiario/listar-beneficiario.component';
+import { CrearBeneficiarioComponent } from './beneficiario/crear-beneficiario/crear-beneficiario.component';
+import { EditarBeneficiarioComponent } from './beneficiario/editar-beneficiario/editar-beneficiario.component';
+import { EliminarBeneficiarioComponent } from './beneficiario/eliminar-beneficiario/eliminar-beneficiario.component';
+import { ListarClientePlanComponent } from './cliente-plan/listar-cliente-plan/listar-cliente-plan.component';
+import { CrearClientePlanComponent } from './cliente-plan/crear-cliente-plan/crear-cliente-plan.component';
+import { EditarClientePlanComponent } from './cliente-plan/editar-cliente-plan/editar-cliente-plan.component';
+import { EliminarClientePlanComponent } from './cliente-plan/eliminar-cliente-plan/eliminar-cliente-plan.component';
 
 const routes: Routes = [
   {
@@ -41,6 +49,38 @@ const routes: Routes = [
   {
     path:"cliente-eliminar/:id",
     component: EliminarClienteComponent
+  },
+  {
+    path: "beneficiario-listar",
+    component: ListarBeneficiarioComponent
+  },
+  {
+    path:"beneficiario-agregar",
+    component: CrearBeneficiarioComponent
+  },
+  {
+    path:"beneficiario-editar/:id",
+    component: EditarBeneficiarioComponent
+  },
+  {
+    path:"beneficiario-eliminar/:id",
+    component: EliminarBeneficiarioComponent
+  },
+  {
+    path: "cliente-plan-listar",
+    component: ListarClientePlanComponent
+  },
+  {
+    path:"cliente-plan-agregar",
+    component: CrearClientePlanComponent
+  },
+  {
+    path:"cliente-plan-editar/:id",
+    component: EditarClientePlanComponent
+  },
+  {
+    path:"cliente-plan-eliminar/:id",
+    component: EliminarClientePlanComponent
   }
 ];
 

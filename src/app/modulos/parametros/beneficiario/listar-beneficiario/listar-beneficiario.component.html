@@ -1,14 +1,13 @@
-
 <body>
 
   <br/>
-  <a routerLink="/parametros/cliente-agregar" class="btn">Agregar Registro </a>
+  <a routerLink="/parametros/beneficiario-agregar" class="btn">Agregar Registro </a>
   <br/>
 
   <div class="hero">
-      <h1>Listado de nuestros Clientes</h1>
-      <p>Conozca a los clientes que hayan contado con nuestros servicios</p>
-      <button>Conozca Nuestros Clientes</button>
+      <h1>Listado de nuestros Beneficiarios</h1>
+      <p>Conozca a los Beneficiarios asociados a nuestros servicios</p>
+      <button>Conozca Nuestros Beneficiarios</button>
   </div>
 
   <table>
@@ -16,8 +15,10 @@
           <tr>
               <th>Nombre</th>
               <th>Correo</th>
+              <th>Parentesco</th>
               <th>Celular</th>
               <th>Direccion</th>
+              <th>Cliente Relacionado</th>
               <th>Acciones</th>
           </tr>
       </thead>
@@ -25,11 +26,13 @@
           <tr *ngFor="let reg of listaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
               <td>{{ reg.nombre }} {{reg.primerApellido}} {{reg.segundoApellido}}</td>
               <td>{{ reg.correo }}</td>
+              <td>{{reg.parentesco}}</td>
               <td>{{ reg.celular }}</td>
               <td>{{ reg.direccion }}</td>
+              <td>{{reg.clienteId}}</td>
               <td>
-                  <a routerLink="/parametros/cliente-editar/{{reg.id}}" class="btn orange">Editar Registro </a>&nbsp;
-                  <a routerLink="/parametros/cliente-eliminar/{{reg.id}}" class="btn red">Eliminar Registro </a>
+                  <a routerLink="/parametros/beneficiario-editar/{{reg.id}}" class="btn orange">Editar Registro </a>&nbsp;
+                  <a routerLink="/parametros/beneficiario-eliminar{{reg.id}}" class="btn red">Eliminar Registro </a>
                 </td>
             </tr>
             <tr>
