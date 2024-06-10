@@ -20,6 +20,14 @@ import { CrearClientePlanComponent } from './cliente-plan/crear-cliente-plan/cre
 import { EditarClientePlanComponent } from './cliente-plan/editar-cliente-plan/editar-cliente-plan.component';
 import { EliminarClientePlanComponent } from './cliente-plan/eliminar-cliente-plan/eliminar-cliente-plan.component';
 import { ListarClientePlanComponent } from './cliente-plan/listar-cliente-plan/listar-cliente-plan.component';
+import { CrearFacturaComponent } from './factura/crear-factura/crear-factura.component';
+import { EditarFacturaComponent } from './factura/editar-factura/editar-factura.component';
+import { EliminarFacturaComponent } from './factura/eliminar-factura/eliminar-factura.component';
+import { ListarFacturaComponent } from './factura/listar-factura/listar-factura.component';
+import { CrearResenasComponent } from './resenas/crear-resenas/crear-resenas.component';
+import { EditarResenasComponent } from './resenas/editar-resenas/editar-resenas.component';
+import { EliminarResenasComponent } from './resenas/eliminar-resenas/eliminar-resenas.component';
+import { ListarResenasComponent } from './resenas/listar-resenas/listar-resenas.component';
 
 
 @NgModule({
@@ -39,7 +47,15 @@ import { ListarClientePlanComponent } from './cliente-plan/listar-cliente-plan/l
     CrearClientePlanComponent,
     EditarClientePlanComponent,
     EliminarClientePlanComponent,
-    ListarClientePlanComponent
+    ListarClientePlanComponent,
+    CrearFacturaComponent,
+    EditarFacturaComponent,
+    EliminarFacturaComponent,
+    ListarFacturaComponent,
+    CrearResenasComponent,
+    EditarResenasComponent,
+    EliminarResenasComponent,
+    ListarResenasComponent,
   ],
   imports: [
     CommonModule,

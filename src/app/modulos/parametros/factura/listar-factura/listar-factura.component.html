@@ -1,0 +1,43 @@
+<body>
+
+    <br/>
+    <a routerLink="/parametros/factura-agregar" class="btn">Agregar Factura </a>
+    <br/>
+  
+    <div class="hero">
+        <h1>Listado de nuestras Facturas</h1>
+        <p>Conozca las Facturas asociadas a nuestros servicios</p>
+        <button>Conozca Nuestros Facturas</button>
+    </div>
+  
+    <table>
+        <thead>
+            <tr>
+                <th>fechaLimitePago</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reg of listaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
+                <td>{{ reg.fechaLimitePago}}</td>
+                <td>{{reg.clientePlanId}}</td>
+                <td>
+                    <a routerLink="/parametros/factura-editar/{{reg.id}}" class="btn orange">Editar Factura </a>&nbsp;
+                    <a routerLink="/parametros/factura-eliminar{{reg.id}}" class="btn red">Eliminar Factura </a>
+                  </td>
+              </tr>
+              <tr>
+                  <td colspan="5">
+                      <pagination-controls
+                        (pageChange)="pag = $event; ListarRegistros()"
+                        previousLabel="Anterior"
+                        nextLabel="Siguiente"
+                        screenReaderPaginationLabel="Navegación"
+                        screenReaderPageLabel="Pagina"
+                        screenReaderCurrentLabel="Pagina Actual">
+                      </pagination-controls>
+                  </td>
+              </tr>
+        </tbody>
+    </table>
+    </body>
+  
