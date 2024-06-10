@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SeguridadService } from '../../../servicios/seguridad.service';
 import { ItemMenuModel } from '../../../modelos/item.menu.model';
+import { ConfiguracionMenuLateral } from '../../../config/configuracion.menu.lateral';
 
 declare const iniciarMenuLateral: any;
 
@@ -18,7 +19,16 @@ export class MenuLateralComponent {
   }
 
   ngOnInit() {
-    this.listaMenus = this.servicioSeguridad.ObtenerItemsMenuLateral();
+    let menusBackend = this.servicioSeguridad.ObtenerItemsMenuLateral();
+    let menusConfiguracion = ConfiguracionMenuLateral.listaMenus;
+    menusConfiguracion.forEach(menuConfiguracion => {
+      if (menusBackend.find(menuBackend => menuBackend.menuId === menuConfiguracion.id)){
+        this.listaMenus.push(menuConfiguracion);
+      }
+    });
+    console.log(menusBackend)
+    console.log(this.listaMenus)
+    
     iniciarMenuLateral();
   }
 

@@ -185,12 +185,14 @@ export class SeguridadService {
    *
    * @returns lista con items del menu
    */
-  ObtenerItemsMenuLateral():ItemMenuModel[] {
-    let menu: ItemMenuModel[] = [];
-    let menuStr = localStorage.getItem("menu-lateral");
-    if(menuStr) {
-      let menu: ItemMenuModel[] = JSON.parse(menuStr);
+  ObtenerItemsMenuLateral():MenuModel[] {
+    let menu: MenuModel[] = [];
+    let datosSesion = localStorage.getItem("datos-sesion");
+    if(datosSesion) {
+      let usuario: UsuarioValidadoModel = JSON.parse(datosSesion); 
+       menu = usuario?.menu;
     }
+    console.log(menu)
     return menu;
   }
 
