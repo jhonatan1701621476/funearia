@@ -23,8 +23,8 @@ const routes: Routes = [
     loadChildren: () => import("./modulos/seguridad/seguridad.module").then(m => m.SeguridadModule)
   },
   {
-    path: "parametros",
-    loadChildren: () => import("./modulos/parametros/parametros.module").then(m => m.ParametrosModule)
+    path: "params",
+    loadChildren: () => import("./modulos/params/params.module").then(m => m.ParamsModule)
   },
   {
     path: "reportes",

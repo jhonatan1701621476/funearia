@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListarServicioComponent } from './servicio/listar-servicio/listar-servicio.component';
-import { CrearServicioComponent } from './servicio/crear-servicio/crear-servicio.component';
-import { EditarServicioComponent } from './servicio/editar-servicio/editar-servicio.component';
-import { EliminarServicioComponent } from './servicio/eliminar-servicio/eliminar-servicio.component';
+import { CrearServicioComponent } from '../params/servicio/crear-servicio/crear-servicio.component';
+import { EditarServicioComponent } from '../params/servicio/editar-servicio/editar-servicio.component';
+import { EliminarServicioComponent } from '../params/servicio/eliminar-servicio/eliminar-servicio.component';
 import { ListarClienteComponent } from './cliente/listar-cliente/listar-cliente.component';
 import { CrearClienteComponent } from './cliente/crear-cliente/crear-cliente.component';
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';

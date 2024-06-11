@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ConfiguracionRutasBackend } from '../../../../config/configuracion.rutas.backend';
-import { ParametrosService } from '../../../../servicios/parametros/servicios.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { PlanModel } from '../../../../modelos/plan.model';
-import { ArchivoModel } from '../../../../modelos/archivo.model';
+import { Component } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { ConfiguracionRutasBackend } from "../../../../config/configuracion.rutas.backend";
+import { ParametrosService } from "../../../../servicios/parametros/servicios.service";
+import { ActivatedRoute, Router } from "@angular/router";
+import { PlanModel } from "../../../../modelos/plan.model";
+import { ArchivoModel } from "../../../../modelos/archivo.model";
 
 @Component({
   selector: 'app-editar-servicio',

@@ -7,9 +7,9 @@ import { CrearClienteComponent } from './cliente/crear-cliente/crear-cliente.com
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
 import { ListarClienteComponent } from './cliente/listar-cliente/listar-cliente.component';
 import { ListarServicioComponent } from './servicio/listar-servicio/listar-servicio.component';
-import { CrearServicioComponent } from './servicio/crear-servicio/crear-servicio.component';
-import { EditarServicioComponent } from './servicio/editar-servicio/editar-servicio.component';
-import { EliminarServicioComponent } from './servicio/eliminar-servicio/eliminar-servicio.component';
+import { CrearServicioComponent } from '../params/servicio/crear-servicio/crear-servicio.component';
+import { EditarServicioComponent } from '../params/servicio/editar-servicio/editar-servicio.component';
+import { EliminarServicioComponent } from '../params/servicio/eliminar-servicio/eliminar-servicio.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CrearBeneficiarioComponent } from './beneficiario/crear-beneficiario/crear-beneficiario.component';
