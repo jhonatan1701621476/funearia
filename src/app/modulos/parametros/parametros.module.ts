@@ -28,6 +28,14 @@ import { CrearResenasComponent } from './resenas/crear-resenas/crear-resenas.com
 import { EditarResenasComponent } from './resenas/editar-resenas/editar-resenas.component';
 import { EliminarResenasComponent } from './resenas/eliminar-resenas/eliminar-resenas.component';
 import { ListarResenasComponent } from './resenas/listar-resenas/listar-resenas.component';
+import { ListarServicioPlanComponent } from './servicio-plan/listar-servicio-plan/listar-servicio-plan.component';
+import { CrearServicioPlanComponent } from './servicio-plan/crear-servicio-plan/crear-servicio-plan.component';
+import { EditarServicioPlanComponent } from './servicio-plan/editar-servicio-plan/editar-servicio-plan.component';
+import { EliminarServicioPlanComponent } from './servicio-plan/eliminar-servicio-plan/eliminar-servicio-plan.component';
+import { ListarSolicitudesComponent} from './solicitudes/listar-solicitudes/listar-solicitudes.component';
+import { CrearSolicitudesComponent } from './solicitudes/crear-solicitudes/crear-solicitudes.component';
+import { EditarSolicitudesComponent } from './solicitudes/editar-solicitudes/editar-solicitudes.component';
+import { EliminarSolicitudesComponent } from './solicitudes/eliminar-solicitudes/eliminar-solicitudes.component';
 
 
 @NgModule({
@@ -56,6 +64,14 @@ import { ListarResenasComponent } from './resenas/listar-resenas/listar-resenas.
     EditarResenasComponent,
     EliminarResenasComponent,
     ListarResenasComponent,
+    ListarServicioPlanComponent,
+    CrearServicioPlanComponent,
+    EditarServicioPlanComponent,
+    EliminarServicioPlanComponent,
+    ListarSolicitudesComponent,
+    CrearSolicitudesComponent,
+    EditarSolicitudesComponent,
+    EliminarSolicitudesComponent,
   ],
   imports: [
     CommonModule,
