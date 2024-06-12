@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+/*import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListarServicioComponent } from './servicio/listar-servicio/listar-servicio.component';
 import { CrearServicioComponent } from '../params/servicio/crear-servicio/crear-servicio.component';
@@ -89,3 +89,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class ParametrosRoutingModule { }
+*/

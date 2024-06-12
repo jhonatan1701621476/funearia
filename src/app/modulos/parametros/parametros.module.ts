@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+/*import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ParametrosRoutingModule } from './parametros-routing.module';
@@ -82,3 +82,4 @@ import { EliminarSolicitudesComponent } from './solicitudes/eliminar-solicitudes
   ]
 })
 export class ParametrosModule { }
+*/

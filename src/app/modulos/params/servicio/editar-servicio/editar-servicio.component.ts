@@ -27,7 +27,7 @@ export class EditarServicioComponent {
     private route: ActivatedRoute
   ) {
     this.recordId = this.route.snapshot.params["id"];
-   }
+  }
 
   ngOnInit(): void {
     this.ConstruirFormularioDatos();
