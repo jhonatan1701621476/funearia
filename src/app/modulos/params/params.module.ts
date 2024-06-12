@@ -8,10 +8,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { EditarServicioComponent } from './servicio/editar-servicio/editar-servicio.component';
 import { CrearServicioComponent } from './servicio/crear-servicio/crear-servicio.component';
 import { EliminarServicioComponent } from './servicio/eliminar-servicio/eliminar-servicio.component';
-import { ListarClienteComponent } from '../parametros/cliente/listar-cliente/listar-cliente.component';
-import { EditarClienteComponent } from '../parametros/cliente/editar-cliente/editar-cliente.component';
-import { CrearClienteComponent } from '../parametros/cliente/crear-cliente/crear-cliente.component';
-import { EliminarClienteComponent } from '../parametros/cliente/eliminar-cliente/eliminar-cliente.component';
+import { ListarClienteComponent } from '../params/cliente/listar-cliente/listar-cliente.component';
+import { EditarClienteComponent } from '../params/cliente/editar-cliente/editar-cliente.component';
+import { CrearClienteComponent } from '../params/cliente/crear-cliente/crear-cliente.component';
+import { EliminarClienteComponent } from '../params/cliente/eliminar-cliente/eliminar-cliente.component';
+import { ListarBeneficiarioComponent } from '../params/beneficiario/listar-beneficiario/listar-beneficiario.component';
+import { EditarBeneficiarioComponent } from '../params/beneficiario/editar-beneficiario/editar-beneficiario.component';
+import { CrearBeneficiarioComponent } from '../params/beneficiario/crear-beneficiario/crear-beneficiario.component';
+import { EliminarBeneficiarioComponent } from '../params/beneficiario/eliminar-beneficiario/eliminar-beneficiario.component';
 
 
 @NgModule({
@@ -23,7 +27,11 @@ import { EliminarClienteComponent } from '../parametros/cliente/eliminar-cliente
     ListarClienteComponent,
     EditarClienteComponent,
     CrearClienteComponent,
-    EliminarClienteComponent
+    EliminarClienteComponent,
+    ListarBeneficiarioComponent,
+    EditarBeneficiarioComponent,
+    CrearBeneficiarioComponent,
+    EliminarBeneficiarioComponent
   ],
   imports: [
     CommonModule,

@@ -1,51 +1,50 @@
 
 <body>
 
-    <br/>
-    <a routerLink="/parametros/servicio-agregar" class="btn">Agregar Registro </a>
-    <br/>
-    
-    <div class="hero">
-        <h1>Planes Exequiales que Ofrecen Paz y Tranquilidad</h1>
-        <p>Conozca nuestros planes diseñados para su tranquilidad y la de su familia</p>
-        <button>Conozca Nuestros Planes</button>
-    </div>
-    
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre del Plan</th>
-                <th>Cantidad de Beneficiarios</th>
-                <th>Detalle</th>
-                <th>Valor del Plan</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let reg of ListaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
-                <td>{{ reg.nombrePlan }}</td>
-                <td>{{ reg.cantidadBeneficiario }}</td>
-                <td>{{ reg.detalle }}</td>
-                <td>{{ reg.valorPlan }}</td>
-                <td>{{ reg.estado }}</td>
-                <td>
-                    <a routerLink="/parametros/servicio-editar/{{reg.id}}" class="btn orange">Editar Registro </a>&nbsp;
-                    <a routerLink="/parametros/servicio-eliminar/{{reg.id}}" class="btn red">Eliminar Registro </a>
-    
-            </tr>
-            <tr>
-                <td colspan="5">
-                    <pagination-controls
-                      (pageChange)="pag = $event; ListarRegistros()"
-                      previousLabel="Anterior"
-                      nextLabel="Siguiente"
-                      screenReaderPaginationLabel="Navegación"
-                      screenReaderPageLabel="Pagina"
-                      screenReaderCurrentLabel="Pagina Actual">
-                    </pagination-controls>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    </body>
-    
+<br/>
+<a routerLink="/parametros/servicio-agregar" class="btn">Agregar Registro </a>
+<br/>
+
+<div class="hero">
+    <h1>Planes Exequiales que Ofrecen Paz y Tranquilidad</h1>
+    <p>Conozca nuestros planes diseñados para su tranquilidad y la de su familia</p>
+    <button>Conozca Nuestros Planes</button>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre del Plan</th>
+            <th>Cantidad de Beneficiarios</th>
+            <th>Detalle</th>
+            <th>Valor del Plan</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reg of ListaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
+            <td>{{ reg.nombrePlan }}</td>
+            <td>{{ reg.cantidadBeneficiario }}</td>
+            <td>{{ reg.detalle }}</td>
+            <td>{{ reg.valorPlan }}</td>
+            <td>{{ reg.estado }}</td>
+            <td>
+                <a routerLink="/parametros/servicio-editar/{{reg.id}}" class="btn orange">Editar Registro </a>&nbsp;
+                <a routerLink="/parametros/servicio-eliminar/{{reg.id}}" class="btn red">Eliminar Registro </a>
+
+        </tr>
+        <tr>
+            <td colspan="5">
+                <pagination-controls
+                  (pageChange)="pag = $event; ListarRegistros()"
+                  previousLabel="Anterior"
+                  nextLabel="Siguiente"
+                  screenReaderPaginationLabel="Navegación"
+                  screenReaderPageLabel="Pagina"
+                  screenReaderCurrentLabel="Pagina Actual">
+                </pagination-controls>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>

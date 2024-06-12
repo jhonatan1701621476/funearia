@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ConfiguracionPaginacion } from '../../../../config/configuracion.paginacion';
 import { ParametrosService } from '../../../../servicios/parametros/servicios.service';
 import { PlanModel } from '../../../../modelos/plan.model';
+import { ConfiguracionPaginacion } from '../../../../config/configuracion.paginacion';
 
 @Component({
   selector: 'app-listar-servicio',
@@ -21,7 +21,6 @@ export class ListarServicioComponent {
   }
 
   ngOnInit(){
-    alert("")
     this.ListarRegistros();
   }
 

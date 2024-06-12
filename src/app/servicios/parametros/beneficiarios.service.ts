@@ -10,8 +10,11 @@ import { PaginadorBeneficiarioModel } from '../../modelos/paginador.beneficiario
   providedIn: 'root'
 })
 export class BeneficiariosService {
+  token =""; // Aquí se almacenará el token de autenticación
   urlBase: string = ConfiguracionRutasBackend.urlNegocio;
-  constructor(private http: HttpClient, private servicioseguridad: SeguridadService) { }
+  constructor(private http: HttpClient, private servicioseguridad: SeguridadService) {
+    this.token = this.servicioseguridad.ObtenerTokenLocalStorage();
+  }
 
   listarRegistros(pag: number):Observable<PaginadorBeneficiarioModel>{
     let limit = ConfiguracionPaginacion.registrosPorPagina;

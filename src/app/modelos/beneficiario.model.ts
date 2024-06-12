@@ -5,7 +5,7 @@ export class BeneficiarioModel{
   segundoApellido?: string;
   parentesco?: string;
   correo?: string;
-  celular?: string;
+  celular?: number;
   direccion?: string;
   fechaRegistro?: string;
   foto?: string;
