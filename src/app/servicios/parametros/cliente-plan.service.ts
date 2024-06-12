@@ -15,13 +15,13 @@ export class ClientePlanService {
   constructor(private http: HttpClient) { }
 
   listarRegistros():Observable<ClientePlanModel[]>{
-    return this.http.get<ClientePlanModel[]>(`${this.urlBase}plan?filter={"limit":${ConfiguracionPaginacion.registrosPorPagina}}`);
+    return this.http.get<ClientePlanModel[]>(`${this.urlBase}cliente-plan?filter={"limit":${ConfiguracionPaginacion.registrosPorPagina}}`);
   }
 
   listarRegistrosPaginados(pag: number):Observable<PaginadorClientePlanModel>{
     let limit = ConfiguracionPaginacion.registrosPorPagina;
     let skip = (pag - 1) * limit;
-    return this.http.get<PaginadorClientePlanModel>(`${this.urlBase}plan-paginado?filter={"limit":${limit}, "skip":${skip}, "order":"id DESC"}`);
+    return this.http.get<PaginadorClientePlanModel>(`${this.urlBase}cliente-plan-paginado?filter={"limit":${limit}, "skip":${skip}, "order":"id DESC"}`);
   }
 
 }

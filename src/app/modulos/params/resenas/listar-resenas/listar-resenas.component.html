@@ -1,20 +1,21 @@
 <body>
 
     <br/>
-    <a routerLink="/parametros/resenas-agregar" class="btn">Agregar Resenas </a>
+    <a routerLink="/params/resena-agregar" class="btn">Agregar Resenas </a>
     <br/>
-  
+
     <div class="hero">
         <h1>Listado de nuestras Resenas</h1>
         <p>Conozca las Resenas asociadas a nuestros servicios</p>
         <button>Conozca Nuestros Resenas</button>
     </div>
-  
+
     <table>
         <thead>
             <tr>
-                <th>comentario</th>
-                <th>calificacion</th>
+                <th>Comentario</th>
+                <th>Calificacion</th>
+                <th>Cliente</th>
             </tr>
         </thead>
         <tbody>
@@ -23,9 +24,9 @@
                 <td>{{ reg.calificacion}}</td>
                 <td>{{reg.clienteId}}</td>
                 <td>
-                    <a routerLink="/parametros/resenas-editar/{{reg.id}}" class="btn orange">Editar Resenas </a>&nbsp;
-                    <a routerLink="/parametros/resenas-eliminar{{reg.id}}" class="btn red">Eliminar Resenas </a>
-                  </td>
+                  <a routerLink="/params/resena-editar/{{reg.id}}" class="btn orange">Editar Factura </a>&nbsp;
+                  <a routerLink="/params/resena-eliminar{{reg.id}}" class="btn red">Eliminar Factura </a>
+                </td>
               </tr>
               <tr>
                   <td colspan="5">
@@ -42,4 +43,3 @@
         </tbody>
     </table>
     </body>
-  

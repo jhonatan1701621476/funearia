@@ -1,19 +1,20 @@
 <body>
 
     <br/>
-    <a routerLink="/parametros/factura-agregar" class="btn">Agregar Factura </a>
+    <a routerLink="/params/factura-agregar" class="btn">Agregar Factura </a>
     <br/>
-  
+
     <div class="hero">
         <h1>Listado de nuestras Facturas</h1>
         <p>Conozca las Facturas asociadas a nuestros servicios</p>
         <button>Conozca Nuestros Facturas</button>
     </div>
-  
+
     <table>
         <thead>
             <tr>
-                <th>fechaLimitePago</th>
+                <th>Fecha Limite Pago</th>
+                <th>Cliente perteneciente al Plan</th>
             </tr>
         </thead>
         <tbody>
@@ -21,8 +22,8 @@
                 <td>{{ reg.fechaLimitePago}}</td>
                 <td>{{reg.clientePlanId}}</td>
                 <td>
-                    <a routerLink="/parametros/factura-editar/{{reg.id}}" class="btn orange">Editar Factura </a>&nbsp;
-                    <a routerLink="/parametros/factura-eliminar{{reg.id}}" class="btn red">Eliminar Factura </a>
+                    <a routerLink="/params/factura-editar/{{reg.id}}" class="btn orange">Editar Factura </a>&nbsp;
+                    <a routerLink="/params/factura-eliminar{{reg.id}}" class="btn red">Eliminar Factura </a>
                   </td>
               </tr>
               <tr>
@@ -40,4 +41,3 @@
         </tbody>
     </table>
     </body>
-  

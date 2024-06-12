@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ClientesService } from '../../../../servicios/parametros/clientes.service';
 import { ClienteModel } from '../../../../modelos/cliente.model';
 import { ConfiguracionPaginacion } from '../../../../config/configuracion.paginacion';
+import { ClientesService } from '../../../../servicios/parametros/clientes.service';
 
 @Component({
   selector: 'app-listar-cliente',
