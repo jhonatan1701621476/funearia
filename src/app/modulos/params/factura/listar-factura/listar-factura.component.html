@@ -24,7 +24,7 @@
                 <td>{{ reg.fechaLimitePago}}</td>
                 <td>{{reg.clientePlanId}}</td>
                 <td>{{reg.clientePlan?.tarifa | currency}}</td>
-                <td>{{reg.clientePlan?.cliente?.nombre}}</td>
+                <td>{{reg.clientePlan?.cliente?.nombre}} {{reg.clientePlan?.cliente?.primerApellido}} {{reg.clientePlan?.cliente?.segundoApellido}}</td>
                 <td>
                     <a routerLink="/params/factura-editar/{{reg.id}}" class="btn orange">Editar Factura </a>&nbsp;
                     <a routerLink="/params/factura-eliminar{{reg.id}}" class="btn red">Eliminar Factura </a>
