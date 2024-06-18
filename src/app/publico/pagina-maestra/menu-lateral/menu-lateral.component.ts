@@ -19,7 +19,7 @@ export class MenuLateralComponent {
   }
 
   ngOnInit() {
-    /*let menusBackend = this.servicioSeguridad.ObtenerItemsMenuLateral();
+    let menusBackend = this.servicioSeguridad.ObtenerItemsMenuLateral();
     let menusConfiguracion = ConfiguracionMenuLateral.listaMenus;
     menusConfiguracion.forEach(menuConfiguracion => {
       if (menusBackend.find(menuBackend => menuBackend.menuId === menuConfiguracion.id)){
@@ -29,7 +29,7 @@ export class MenuLateralComponent {
     console.log(menusBackend)
     console.log(this.listaMenus)
     
-    iniciarMenuLateral();*/
+    iniciarMenuLateral();
   }
 
 }

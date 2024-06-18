@@ -1,1 +1,43 @@
-<p>listar-solicitudes works!</p>
+<!--<body>
+
+    <br/>
+    <a routerLink="/params/solicitudes-agregar" class="btn">Agregar Solicitudes </a>
+    <br/>
+
+    <div class="hero">
+        <h1>Listado de nuestras Solicitudes</h1>
+        <p>Conozca las Solicitudes asociadas a nuestros servicios</p>
+        <button>Conozca Nuestros Solicitudes</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha Limite Pago</th>
+                <th>Cliente perteneciente al Plan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reg of listaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
+                <td>{{ reg.fechaLimitePago}}</td>
+                <td>{{reg.clientePlanId}}</td>
+                <td>
+                    <a routerLink="/params/solicitudes-editar/{{reg.id}}" class="btn orange">Editar Solicitudes </a>&nbsp;
+                    <a routerLink="/params/solicitudes-eliminar{{reg.id}}" class="btn red">Eliminar Solicitudes </a>
+                  </td>
+              </tr>
+              <tr>
+                  <td colspan="5">
+                      <pagination-controls
+                        (pageChange)="pag = $event; ListarRegistros()"
+                        previousLabel="Anterior"
+                        nextLabel="Siguiente"
+                        screenReaderPaginationLabel="Navegación"
+                        screenReaderPageLabel="Pagina"
+                        screenReaderCurrentLabel="Pagina Actual">
+                      </pagination-controls>
+                  </td>
+              </tr>
+        </tbody>
+    </table>
+    </body>-->
