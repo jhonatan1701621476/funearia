@@ -1,0 +1,49 @@
+<body>
+
+    <br/>
+    <a routerLink="/param/sedes-funerarias-agregar/" class="btn">Agregar sedes funerarias </a>
+    <br/>
+  
+    <div class="hero">
+        <h1>Listado de nuestras sedes funerarias</h1>
+        <p>Conozca las sedes funerarias asociadas a nuestros servicios</p>
+        <button>Conozca Nuestras sedes funerarias</button>
+    </div>
+  
+    <table>
+        <thead>
+            <tr>
+                <th>Direccion</th>
+                <th>Correo</th>
+                <th>Celular</th>
+                <th>Ciudad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reg of listaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
+                <td>{{ reg.direccion }}</td>
+                <td>{{ reg.correo }}</td>
+                <td>{{reg.celular}}</td>
+                <td>{{ reg.ciudadId }}</td>                
+                <td>
+                    <a routerLink="/parametros/beneficiario-editar/{{reg.id}}" class="btn orange">Editar Registro </a>&nbsp;
+                    <a routerLink="/parametros/beneficiario-eliminar{{reg.id}}" class="btn red">Eliminar Registro </a>
+                  </td>
+              </tr>
+              <tr>
+                  <td colspan="5">
+                      <pagination-controls
+                        (pageChange)="pag = $event; ListarRegistros()"
+                        previousLabel="Anterior"
+                        nextLabel="Siguiente"
+                        screenReaderPaginationLabel="Navegación"
+                        screenReaderPageLabel="Pagina"
+                        screenReaderCurrentLabel="Pagina Actual">
+                      </pagination-controls>
+                  </td>
+              </tr>
+        </tbody>
+    </table>
+    </body>
+  

@@ -28,6 +28,16 @@ import { ListarResenasComponent } from './resenas/listar-resenas/listar-resenas.
 import { EditarResenasComponent } from './resenas/editar-resenas/editar-resenas.component';
 import { CrearResenasComponent } from './resenas/crear-resenas/crear-resenas.component';
 import { EliminarResenasComponent } from './resenas/eliminar-resenas/eliminar-resenas.component';
+import { CrearSalaVelacionComponent } from './sala-velacion/crear-sala-velacion/crear-sala-velacion.component';
+import { EditarSalaVelacionComponent } from './sala-velacion/editar-sala-velacion/editar-sala-velacion.component';
+import { EliminarSalaVelacionComponent } from './sala-velacion/eliminar-sala-velacion/eliminar-sala-velacion.component';
+import { ListarSalaVelacionComponent } from './sala-velacion/listar-sala-velacion/listar-sala-velacion.component';
+import { CrearSedesFunerariasComponent } from './sedes-funerarias/crear-sedes-funerarias/crear-sedes-funerarias.component';
+import { EditarSedesFunerariasComponent } from './sedes-funerarias/editar-sedes-funerarias/editar-sedes-funerarias.component';
+import { EliminarSedesFunerariasComponent } from './sedes-funerarias/eliminar-sedes-funerarias/eliminar-sedes-funerarias.component';
+import { ListarSedesFunerariasComponent } from './sedes-funerarias/listar-sedes-funerarias/listar-sedes-funerarias.component';
+
+
 
 
 @NgModule({
@@ -56,6 +66,16 @@ import { EliminarResenasComponent } from './resenas/eliminar-resenas/eliminar-re
     EditarResenasComponent,
     CrearResenasComponent,
     EliminarResenasComponent,
+    CrearSalaVelacionComponent,
+    EditarSalaVelacionComponent,
+    EliminarSalaVelacionComponent,
+    ListarSalaVelacionComponent,
+    CrearSedesFunerariasComponent,
+    EditarSedesFunerariasComponent,
+    EliminarSedesFunerariasComponent,
+    ListarSedesFunerariasComponent,
+  
+ 
   ],
   imports: [
     CommonModule,

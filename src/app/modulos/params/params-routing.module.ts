@@ -24,6 +24,14 @@ import { ListarResenasComponent } from './resenas/listar-resenas/listar-resenas.
 import { EditarResenasComponent } from './resenas/editar-resenas/editar-resenas.component';
 import { CrearResenasComponent } from './resenas/crear-resenas/crear-resenas.component';
 import { EliminarResenasComponent } from './resenas/eliminar-resenas/eliminar-resenas.component';
+import { ListarSalaVelacionComponent } from './sala-velacion/listar-sala-velacion/listar-sala-velacion.component';
+import { CrearSalaVelacionComponent } from './sala-velacion/crear-sala-velacion/crear-sala-velacion.component';
+import { EditarSalaVelacionComponent } from './sala-velacion/editar-sala-velacion/editar-sala-velacion.component';
+import { EliminarSalaVelacionComponent } from './sala-velacion/eliminar-sala-velacion/eliminar-sala-velacion.component';
+import { ListarSedesFunerariasComponent } from './sedes-funerarias/listar-sedes-funerarias/listar-sedes-funerarias.component';
+import { EditarSedesFunerariasComponent } from './sedes-funerarias/editar-sedes-funerarias/editar-sedes-funerarias.component';
+import { CrearSedesFunerariasComponent } from './sedes-funerarias/crear-sedes-funerarias/crear-sedes-funerarias.component';
+import { EliminarSedesFunerariasComponent } from './sedes-funerarias/eliminar-sedes-funerarias/eliminar-sedes-funerarias.component';
 
 const routes: Routes = [
   {
@@ -121,6 +129,38 @@ const routes: Routes = [
   {
     path: "resena-eliminar/:id",
     component: EliminarResenasComponent
+  },
+  {
+    path: "sala-velacion-listar/:id",
+    component: ListarSalaVelacionComponent
+  },
+  {
+    path: "sala-velacion-crear/:id",
+    component: CrearSalaVelacionComponent
+  },
+  {
+    path: "sala-velacion-editar/:id",
+    component: EditarSalaVelacionComponent
+  },
+  {
+    path: "sala-velacion-eliminar/:id",
+    component: EliminarSalaVelacionComponent
+  },
+  {
+    path: "sedes-funeraria-listar/:id",
+    component: ListarSalaVelacionComponent
+  },
+  {
+    path: "sedes-funerarias-editar/:id",
+    component: EditarSedesFunerariasComponent
+  },
+  {
+    path: "sedes-funerarias-crear/:id",
+    component: CrearSedesFunerariasComponent
+  },
+  {
+    path: "sedes-funerarias-eliminar/:id",
+    component: EliminarSedesFunerariasComponent
   },
 ];
 

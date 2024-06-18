@@ -1,0 +1,51 @@
+<body>
+
+    <br/>
+    <a routerLink="/param/sala-velacion-agregar/" class="btn">Agregar sala de velacion </a>
+    <br/>
+  
+    <div class="hero">
+        <h1>Listado de nuestras salas de velacion</h1>
+        <p>Conozca las salas de velacion asociadas a nuestros servicios</p>
+        <button>Conozca Nuestros salas de velacion</button>
+    </div>
+  
+    <table>
+        <thead>
+            <tr>
+                <th>NombreSala</th>
+                <th>Ubicacion</th>
+                <th>Capacidad</th>
+                <th>Tiempo disponible</th>
+                <th>Sede funeraria</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reg of listaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
+                <td>{{ reg.nombreSala }} {{reg.nombreSala}}</td>
+                <td>{{ reg.ubicacion }}</td>
+                <td>{{reg.capacidad}}</td>
+                <td>{{ reg.tiempoDisponible }}</td>
+                <td>{{ reg.sedesFunerariaId }}</td>                
+                <td>
+                    <a routerLink="/parametros/beneficiario-editar/{{reg.id}}" class="btn orange">Editar Registro </a>&nbsp;
+                    <a routerLink="/parametros/beneficiario-eliminar{{reg.id}}" class="btn red">Eliminar Registro </a>
+                  </td>
+              </tr>
+              <tr>
+                  <td colspan="5">
+                      <pagination-controls
+                        (pageChange)="pag = $event; ListarRegistros()"
+                        previousLabel="Anterior"
+                        nextLabel="Siguiente"
+                        screenReaderPaginationLabel="Navegación"
+                        screenReaderPageLabel="Pagina"
+                        screenReaderCurrentLabel="Pagina Actual">
+                      </pagination-controls>
+                  </td>
+              </tr>
+        </tbody>
+    </table>
+    </body>
+  
