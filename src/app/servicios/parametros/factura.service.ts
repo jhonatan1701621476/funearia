@@ -16,7 +16,7 @@ export class FacturaService {
   listarRegistros(pag: number):Observable<PaginadorFacturaModel>{
     let limit = ConfiguracionPaginacion.registrosPorPagina;
     let skip = (pag - 1) * limit;
-    let url = `${this.urlBase}factura?filter={"limit":${limit}, "skip":${skip}}`;
+    let url = `${this.urlBase}factura?filter={"include":[{"relation":"clientePlan", "scope":{"include":[{"relation":"cliente"}]}}], "limit":${limit}, "skip":${skip}}`;
     return this.http.get<PaginadorFacturaModel>(url);
 
   }

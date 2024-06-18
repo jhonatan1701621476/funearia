@@ -32,6 +32,7 @@ import { ListarSedesFunerariasComponent } from './sedes-funerarias/listar-sedes-
 import { EditarSedesFunerariasComponent } from './sedes-funerarias/editar-sedes-funerarias/editar-sedes-funerarias.component';
 import { CrearSedesFunerariasComponent } from './sedes-funerarias/crear-sedes-funerarias/crear-sedes-funerarias.component';
 import { EliminarSedesFunerariasComponent } from './sedes-funerarias/eliminar-sedes-funerarias/eliminar-sedes-funerarias.component';
+import { ListarSolicitudesComponent } from './solicitudes/listar-solicitudes/listar-solicitudes.component';
 
 const routes: Routes = [
   {
@@ -161,6 +162,14 @@ const routes: Routes = [
   {
     path: "sedes-funerarias-eliminar/:id",
     component: EliminarSedesFunerariasComponent
+  },
+  {
+    path: "solicitudes-listar",
+    component: ListarSolicitudesComponent
+  },
+  {
+    path: "servicio-plan-listar",
+    component: ListarSolicitudesComponent
   },
 ];
 

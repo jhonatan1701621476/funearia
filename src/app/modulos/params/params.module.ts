@@ -36,6 +36,8 @@ import { CrearSedesFunerariasComponent } from './sedes-funerarias/crear-sedes-fu
 import { EditarSedesFunerariasComponent } from './sedes-funerarias/editar-sedes-funerarias/editar-sedes-funerarias.component';
 import { EliminarSedesFunerariasComponent } from './sedes-funerarias/eliminar-sedes-funerarias/eliminar-sedes-funerarias.component';
 import { ListarSedesFunerariasComponent } from './sedes-funerarias/listar-sedes-funerarias/listar-sedes-funerarias.component';
+import { ListarServicioPlanComponent } from './servicio-plan/listar-servicio-plan/listar-servicio-plan.component';
+import { ListarSolicitudesComponent } from './solicitudes/listar-solicitudes/listar-solicitudes.component';
 
 
 
@@ -74,7 +76,8 @@ import { ListarSedesFunerariasComponent } from './sedes-funerarias/listar-sedes-
     EditarSedesFunerariasComponent,
     EliminarSedesFunerariasComponent,
     ListarSedesFunerariasComponent,
-  
+    ListarServicioPlanComponent,
+    ListarSolicitudesComponent
  
   ],
   imports: [

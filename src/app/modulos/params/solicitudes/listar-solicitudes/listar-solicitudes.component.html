@@ -1,4 +1,4 @@
-<!--<body>
+<body>
 
     <br/>
     <a routerLink="/params/solicitudes-agregar" class="btn">Agregar Solicitudes </a>
@@ -13,14 +13,20 @@
     <table>
         <thead>
             <tr>
-                <th>Fecha Limite Pago</th>
-                <th>Cliente perteneciente al Plan</th>
+                <th>Fecha Solicitud</th>
+                <th>Observaciones</th>
+                <th>Estado Solitud</th>
+                <th>BeneficiarioId</th>
+                <th>SedesFunerariaId</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let reg of listaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
-                <td>{{ reg.fechaLimitePago}}</td>
-                <td>{{reg.clientePlanId}}</td>
+            <tr *ngFor="let reg of ListaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
+                <td>{{ reg.fechaSolicitud}}</td>
+                <td>{{reg.observaciones}}</td>
+                <td>{{reg.estadoSolicitud}}</td>
+                <td>{{reg.beneficiarioId}}</td>
+                <td>{{reg.sedesFunerariaId}}</td>
                 <td>
                     <a routerLink="/params/solicitudes-editar/{{reg.id}}" class="btn orange">Editar Solicitudes </a>&nbsp;
                     <a routerLink="/params/solicitudes-eliminar{{reg.id}}" class="btn red">Eliminar Solicitudes </a>
@@ -40,4 +46,4 @@
               </tr>
         </tbody>
     </table>
-    </body>-->
+    </body>

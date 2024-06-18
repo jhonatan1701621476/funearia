@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { solicitudesModel } from '../../../../modelos/solicitudes.model';
 import { ConfiguracionPaginacion } from '../../../../config/configuracion.paginacion';
 import { ParametrosService } from '../../../../servicios/parametros/servicios.service';
+import { SolicitudesService } from '../../../../servicios/parametros/solicitudes.service';
 
 @Component({
   selector: 'app-listar-solicitudes',
@@ -16,7 +17,7 @@ export class ListarSolicitudesComponent {
   registroPorPagina = ConfiguracionPaginacion.registrosPorPagina;
 
   constructor(
-    private parametrosService: ParametrosService
+    private solicitudesService: SolicitudesService
   ) {
 
   }
@@ -26,7 +27,7 @@ export class ListarSolicitudesComponent {
   }
 
   ListarRegistros(){
-    this.parametrosService.listarRegistrosPaginados(this.pag).subscribe({
+    this.solicitudesService.listarRegistrosPaginados(this.pag).subscribe({
       next: (datos) =>{
         this.ListaRegistros = datos.registros;
         this.total = datos.totalRegistros;

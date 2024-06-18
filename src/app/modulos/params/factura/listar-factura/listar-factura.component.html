@@ -15,12 +15,16 @@
             <tr>
                 <th>Fecha Limite Pago</th>
                 <th>Cliente perteneciente al Plan</th>
+                <th>Valor</th>
+                <th>Cliente</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let reg of listaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
                 <td>{{ reg.fechaLimitePago}}</td>
                 <td>{{reg.clientePlanId}}</td>
+                <td>{{reg.clientePlan?.tarifa | currency}}</td>
+                <td>{{reg.clientePlan?.cliente?.nombre}}</td>
                 <td>
                     <a routerLink="/params/factura-editar/{{reg.id}}" class="btn orange">Editar Factura </a>&nbsp;
                     <a routerLink="/params/factura-eliminar{{reg.id}}" class="btn red">Eliminar Factura </a>
