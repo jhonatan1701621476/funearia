@@ -1,5 +1,5 @@
-export class pqrs{
-    id_Pqrs?: number;
+export class pqrs2{
+    id?: number;
     nombreCompleto?: string;
     Correo?: string;
     Asunto?: string;

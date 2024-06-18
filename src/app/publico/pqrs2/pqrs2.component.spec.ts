@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PqrsComponent } from './pqrs.component';
+import { PqrsComponent } from './pqrs2.component';
 
 describe('PqrsComponent', () => {
   let component: PqrsComponent;

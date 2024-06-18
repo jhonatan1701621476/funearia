@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PqrsService {
-  private apiUrl = '//crear-pqrs';  // Asegúrate de que este sea el endpoint correcto en tu backend
+export class Pqrs2Service {
+  private apiUrl = '//crear-pqrs2';  // Asegúrate de que este sea el endpoint correcto en tu backend
 
   constructor(private http: HttpClient) { }
 

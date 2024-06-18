@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PqrsService } from './pqrs.service';
+import { Pqrs2Service } from './pqrs2.service';
 
-describe('PqrsService', () => {
-  let service: PqrsService;
+describe('Pqrs2Service', () => {
+  let service: Pqrs2Service;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PqrsService);
+    service = TestBed.inject(Pqrs2Service);
   });
 
   it('should be created', () => {

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './publico/inicio/inicio.component';
 import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/ruta-no-encontrada.component';
-import { PqrsComponent } from './publico/pqrs/pqrs.component';
+import { PqrsComponent } from './publico/pqrs2/pqrs2.component';
 
 const routes: Routes = [
   {
