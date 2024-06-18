@@ -15,7 +15,7 @@ export class ListarSedesFunerariasComponent {
   total = 0;
   registroPorPagina = ConfiguracionPaginacion.registrosPorPagina;
   constructor(
-    private servicioSalaFuneraria: SedesFunerariaService
+    private servicioSedesFuneraria: SedesFunerariaService
   ) {
 
   }
@@ -25,7 +25,7 @@ export class ListarSedesFunerariasComponent {
   }
 
   ListarRegistros(){
-    this.servicioSalaFuneraria.listarRegistros(this.pag).subscribe({
+    this.servicioSedesFuneraria.listarRegistros(this.pag).subscribe({
       next: (datos) =>{
         this.listaRegistros = datos.registros;
         this.total = datos.totalRegistros;

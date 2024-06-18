@@ -131,11 +131,11 @@ const routes: Routes = [
     component: EliminarResenasComponent
   },
   {
-    path: "sala-velacion-listar/:id",
+    path: "sala-velacion-listar",
     component: ListarSalaVelacionComponent
   },
   {
-    path: "sala-velacion-crear/:id",
+    path: "sala-velacion-crear",
     component: CrearSalaVelacionComponent
   },
   {
@@ -147,15 +147,15 @@ const routes: Routes = [
     component: EliminarSalaVelacionComponent
   },
   {
-    path: "sedes-funeraria-listar/:id",
-    component: ListarSalaVelacionComponent
+    path: "sedes-funeraria-listar",
+    component: ListarSedesFunerariasComponent
   },
   {
     path: "sedes-funerarias-editar/:id",
     component: EditarSedesFunerariasComponent
   },
   {
-    path: "sedes-funerarias-crear/:id",
+    path: "sedes-funerarias-crear",
     component: CrearSedesFunerariasComponent
   },
   {

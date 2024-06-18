@@ -18,7 +18,7 @@ export class SedesFunerariaService{
   listarRegistros(pag: number):Observable<any>{
     let limit = ConfiguracionPaginacion.registrosPorPagina;
     let skip = (pag - 1) * limit;
-    let url = `${this.urlBase}sala-velacion?filter={"limit":${limit}, "skip":${skip}}`;
+    let url = `${this.urlBase}sede-funeraria?filter={"limit":${limit}, "skip":${skip}}`;
     return this.http.get<any>(url);
 
     }  
