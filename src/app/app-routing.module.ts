@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './publico/inicio/inicio.component';
 import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/ruta-no-encontrada.component';
 import { Pqrs2Component } from './publico/pqrs2/pqrs2.component';
-
+import { ChatComponent } from './publico/chat/chat.component';
 const routes: Routes = [
   {
     path: "inicio",
@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path:'pqrs2',
     component: Pqrs2Component
+  },
+  {
+    path:'chat',
+    component: ChatComponent
   },
   {
     path: "",

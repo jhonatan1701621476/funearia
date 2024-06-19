@@ -33,7 +33,7 @@ export class Pqrs2Component {
           this.pqrs2Form.reset();
         },
         (        error: any) => {
-          this.confirmationMessage = 'Ocurrió un error al enviar tu PQRS. Por favor, intenta de nuevo más tarde.';
+          this.confirmationMessage = 'Error Correo PQRS';
         }
       );
     }

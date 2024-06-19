@@ -13,6 +13,7 @@ import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/er
 import { InicioComponent } from './publico/inicio/inicio.component';
 import { Pqrs2Component } from './publico/pqrs2/pqrs2.component';
 import { AuthInterceptor } from './interceptors/auth.interceptors';
+import { ChatComponent } from './publico/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,12 @@ import { AuthInterceptor } from './interceptors/auth.interceptors';
     RutaNoEncontradaComponent,
     ErrorDeServidorComponent,
     InicioComponent,
-    Pqrs2Component // No necesitas agregar AppComponent de nuevo aquí
+    Pqrs2Component,
+    ChatComponent 
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule, // Asegúrate de agregar ReactiveFormsModule aquí
+    ReactiveFormsModule, 
     AppRoutingModule,
     HttpClientModule
   ],
