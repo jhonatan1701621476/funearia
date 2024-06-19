@@ -1,3 +1,6 @@
+import { BeneficiarioModel } from "./beneficiario.model";
+import { SedesFunerariasModel } from "./sedes-funerarias.model";
+
 export class solicitudesModel{
     id?: number;
     fechaSolicitud?: string;
@@ -5,5 +8,7 @@ export class solicitudesModel{
     estadoSolicitud?: string;
     beneficiarioId?: number;
     sedesFunerariaId?: number;
+    beneficiario?: BeneficiarioModel;
+    sedesFuneraria?: SedesFunerariasModel;
 
 }

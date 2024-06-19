@@ -25,7 +25,7 @@
                 <td>{{reg.fechaSolicitud}}</td>
                 <td>{{reg.observaciones}}</td>
                 <td>{{reg.estadoSolicitud}}</td>
-                <td>{{reg.beneficiarioId}}</td>
+                <td>{{reg.beneficiario?.nombre}} {{reg.beneficiario?.primerApellido}} {{reg.beneficiario?.segundoApellido}}</td>
                 <td>{{reg.sedesFunerariaId}}</td>
                 <td>
                     <a routerLink="/params/solicitudes-editar/{{reg.id}}" class="btn orange">Editar Solicitudes </a>&nbsp;
