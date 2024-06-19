@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { solicitudesModel } from '../../../../modelos/solicitudes.model';
 import { ConfiguracionPaginacion } from '../../../../config/configuracion.paginacion';
-import { ParametrosService } from '../../../../servicios/parametros/servicios.service';
 import { SolicitudesService } from '../../../../servicios/parametros/solicitudes.service';
 
 @Component({

@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
-import { ServicioPlanModel } from '../../../../modelos/servicio-plan.model';
+import { PlanModel } from '../../../../modelos/plan.model';
 import { ConfiguracionPaginacion } from '../../../../config/configuracion.paginacion';
-import { ServicioPlanService } from '../../../../servicios/parametros/servicio-plan.service';
+import { ParametrosService } from '../../../../servicios/parametros/servicios.service';
 
 @Component({
-  selector: 'app-listar-servicio-plan',
-  templateUrl: './listar-servicio-plan.component.html',
-  styleUrl: './listar-servicio-plan.component.css'
+  selector: 'app-comprar-servicio',
+  templateUrl: './comprar-servicio.component.html',
+  styleUrl: './comprar-servicio.component.css'
 })
-export class ListarServicioPlanComponent {
-  ListaRegistros: ServicioPlanModel[] = [];
+export class ComprarServicioComponent {
+  ListaRegistros: PlanModel[] = [];
   pag = 1;
   total = 0;
   registroPorPagina = ConfiguracionPaginacion.registrosPorPagina;
 
   constructor(
-    private servicioPlanService: ServicioPlanService
+    private parametrosService: ParametrosService
   ) {
 
   }
@@ -25,7 +25,7 @@ export class ListarServicioPlanComponent {
   }
 
   ListarRegistros(){
-    this.servicioPlanService.listarRegistrosPaginados(this.pag).subscribe({
+    this.parametrosService.listarRegistrosPaginados(this.pag).subscribe({
       next: (datos) =>{
         this.ListaRegistros = datos.registros;
         this.total = datos.totalRegistros;

@@ -38,6 +38,7 @@ import { EliminarSedesFunerariasComponent } from './sedes-funerarias/eliminar-se
 import { ListarSedesFunerariasComponent } from './sedes-funerarias/listar-sedes-funerarias/listar-sedes-funerarias.component';
 import { ListarServicioPlanComponent } from './servicio-plan/listar-servicio-plan/listar-servicio-plan.component';
 import { ListarSolicitudesComponent } from './solicitudes/listar-solicitudes/listar-solicitudes.component';
+import { ComprarServicioComponent } from './servicio/comprar-servicio/comprar-servicio.component';
 
 
 
@@ -77,7 +78,8 @@ import { ListarSolicitudesComponent } from './solicitudes/listar-solicitudes/lis
     EliminarSedesFunerariasComponent,
     ListarSedesFunerariasComponent,
     ListarServicioPlanComponent,
-    ListarSolicitudesComponent
+    ListarSolicitudesComponent,
+    ComprarServicioComponent
  
   ],
   imports: [

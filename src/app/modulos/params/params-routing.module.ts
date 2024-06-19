@@ -33,6 +33,8 @@ import { EditarSedesFunerariasComponent } from './sedes-funerarias/editar-sedes-
 import { CrearSedesFunerariasComponent } from './sedes-funerarias/crear-sedes-funerarias/crear-sedes-funerarias.component';
 import { EliminarSedesFunerariasComponent } from './sedes-funerarias/eliminar-sedes-funerarias/eliminar-sedes-funerarias.component';
 import { ListarSolicitudesComponent } from './solicitudes/listar-solicitudes/listar-solicitudes.component';
+import { ComprarServicioComponent } from './servicio/comprar-servicio/comprar-servicio.component';
+import { ListarServicioPlanComponent } from './servicio-plan/listar-servicio-plan/listar-servicio-plan.component';
 
 const routes: Routes = [
   {
@@ -50,6 +52,10 @@ const routes: Routes = [
   {
     path: "servicio-eliminar/:id",
     component: EliminarServicioComponent
+  },
+  {
+    path: "servicio-comprar",
+    component: ComprarServicioComponent
   },
   {
     path: "cliente-listar",
@@ -169,7 +175,7 @@ const routes: Routes = [
   },
   {
     path: "servicio-plan-listar",
-    component: ListarSolicitudesComponent
+    component: ListarServicioPlanComponent
   },
 ];
 
