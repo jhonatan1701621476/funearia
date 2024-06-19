@@ -1,49 +1,51 @@
 <body>
+    <div class="container">
+        <div class="header">
+            <a routerLink="/params/solicitudes-agregar" class="btn">Agregar Solicitudes</a>
+        </div>
 
-    <br/>
-    <a routerLink="/params/solicitudes-agregar" class="btn">Agregar Solicitudes </a>
-    <br/>
+        <div class="hero">
+            <h1>Listado de nuestras Solicitudes</h1>
+            <p>Conozca las Solicitudes asociadas a nuestros servicios</p>
+            <button class="hero-button">Conozca Nuestras Solicitudes</button>
+        </div>
 
-    <div class="hero">
-        <h1>Listado de nuestras Solicitudes</h1>
-        <p>Conozca las Solicitudes asociadas a nuestros servicios</p>
-        <button>Conozca Nuestros Solicitudes</button>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Fecha Solicitud</th>
+                    <th>Observaciones</th>
+                    <th>Estado Solicitud</th>
+                    <th>Beneficiario</th>
+                    <th>Sedes Funeraria Id</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reg of ListaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
+                    <td>{{reg.fechaSolicitud}}</td>
+                    <td>{{reg.observaciones}}</td>
+                    <td>{{reg.estadoSolicitud}}</td>
+                    <td>{{reg.beneficiario?.nombre}} {{reg.beneficiario?.primerApellido}} {{reg.beneficiario?.segundoApellido}}</td>
+                    <td>{{reg.sedesFunerariaId}}</td>
+                    <td>
+                        <a routerLink="/params/solicitudes-editar/{{reg.id}}" class="btn orange">Editar</a>&nbsp;
+                        <a routerLink="/params/solicitudes-eliminar/{{reg.id}}" class="btn red">Eliminar</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <pagination-controls
+                            (pageChange)="pag = $event; ListarRegistros()"
+                            previousLabel="Anterior"
+                            nextLabel="Siguiente"
+                            screenReaderPaginationLabel="Navegación"
+                            screenReaderPageLabel="Página"
+                            screenReaderCurrentLabel="Página Actual">
+                        </pagination-controls>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Fecha Solicitud</th>
-                <th>Observaciones</th>
-                <th>Estado Solitud</th>
-                <th>BeneficiarioId</th>
-                <th>SedesFunerariaId</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let reg of ListaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
-                <td>{{reg.fechaSolicitud}}</td>
-                <td>{{reg.observaciones}}</td>
-                <td>{{reg.estadoSolicitud}}</td>
-                <td>{{reg.beneficiario?.nombre}} {{reg.beneficiario?.primerApellido}} {{reg.beneficiario?.segundoApellido}}</td>
-                <td>{{reg.sedesFunerariaId}}</td>
-                <td>
-                    <a routerLink="/params/solicitudes-editar/{{reg.id}}" class="btn orange">Editar Solicitudes </a>&nbsp;
-                    <a routerLink="/params/solicitudes-eliminar{{reg.id}}" class="btn red">Eliminar Solicitudes </a>
-                  </td>
-              </tr>
-              <tr>
-                  <td colspan="5">
-                      <pagination-controls
-                        (pageChange)="pag = $event; ListarRegistros()"
-                        previousLabel="Anterior"
-                        nextLabel="Siguiente"
-                        screenReaderPaginationLabel="Navegación"
-                        screenReaderPageLabel="Pagina"
-                        screenReaderCurrentLabel="Pagina Actual">
-                      </pagination-controls>
-                  </td>
-              </tr>
-        </tbody>
-    </table>
-    </body>
+</body>
