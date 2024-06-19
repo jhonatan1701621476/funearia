@@ -7,18 +7,17 @@ import { Pqrs2Service } from './pqrs2.service';
 
 
 @Component({
-  selector: 'app-pqrs',
+  selector: 'app-pqrs2',
   templateUrl: './pqrs2.component.html',
   styleUrls: ['./pqrs2.component.css']
 })
-export class PqrsComponent {
+export class Pqrs2Component {
 
-  pqrsForm: FormGroup;
+  pqrs2Form: FormGroup;
   confirmationMessage: string | null = null;
-  pqrs2Form!: FormGroup<any>;
 
   constructor(private fb: FormBuilder, private pqrs2Service: Pqrs2Service) {
-    this.pqrsForm = this.fb.group({
+    this.pqrs2Form = this.fb.group({
       nombre: ['', Validators.required],
       email: ['', [Validators.email]],
       asunto: ['', Validators.required],
@@ -27,11 +26,11 @@ export class PqrsComponent {
   }
 
   onSubmit(): void {
-    if (this.pqrsForm.valid) {
-      this.pqrs2Service.enviarPqrs(this.pqrsForm.value).subscribe(
+    if (this.pqrs2Form.valid) {
+      this.pqrs2Service.enviarPqrs(this.pqrs2Form.value).subscribe(
         (        response: any) => {
           this.confirmationMessage = '¡Gracias por tu PQRS! Hemos recibido tu solicitud.';
-          this.pqrsForm.reset();
+          this.pqrs2Form.reset();
         },
         (        error: any) => {
           this.confirmationMessage = 'Ocurrió un error al enviar tu PQRS. Por favor, intenta de nuevo más tarde.';

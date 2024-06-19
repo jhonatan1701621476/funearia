@@ -17,10 +17,10 @@
         <input type="text" id="asunto" formControlName="asunto" placeholder="Escribe aquí el Asunto" required>
         <label for="descripcion">Descripción</label>
         <textarea id="descripcion" formControlName="mensaje" placeholder="Escribe aquí tu solicitud, queja, reclamo o sugerencia" rows="4" required></textarea>
-        <button type="submit" [disabled]="pqrsForm.invalid">Enviar PQRS</button>
+        <button type="submit" [disabled]="pqrs2Form.invalid">Enviar PQRS</button>
     </form>
     <p *ngIf="confirmationMessage">{{ confirmationMessage }}</p>
 </body>
 </html>
 
-<!-- <input type="text" formControlName="id"/>  para que no se sobremuestre -->
+<input type="text" formControlName="id"/> 

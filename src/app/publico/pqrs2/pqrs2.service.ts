@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class Pqrs2Service {
-  private apiUrl = '//crear-pqrs2';  // Asegúrate de que este sea el endpoint correcto en tu backend
+  private apiUrl = '//crearpqrs2';  // Asegúrate de que este sea el endpoint correcto en tu backend
 
   constructor(private http: HttpClient) { }
 

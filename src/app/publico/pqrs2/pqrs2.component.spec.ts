@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PqrsComponent } from './pqrs2.component';
+import { Pqrs2Component } from './pqrs2.component';
 
-describe('PqrsComponent', () => {
-  let component: PqrsComponent;
-  let fixture: ComponentFixture<PqrsComponent>;
+describe('Pqrs2Component', () => {
+  let component: Pqrs2Component;
+  let fixture: ComponentFixture<Pqrs2Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PqrsComponent]
+      declarations: [Pqrs2Component]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PqrsComponent);
+    fixture = TestBed.createComponent(Pqrs2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

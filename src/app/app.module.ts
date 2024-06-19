@@ -11,7 +11,7 @@ import { MenuLateralComponent } from './publico/pagina-maestra/menu-lateral/menu
 import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/ruta-no-encontrada.component';
 import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/error-de-servidor.component';
 import { InicioComponent } from './publico/inicio/inicio.component';
-import { PqrsComponent } from './publico/pqrs2/pqrs2.component';
+import { Pqrs2Component } from './publico/pqrs2/pqrs2.component';
 import { AuthInterceptor } from './interceptors/auth.interceptors';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptors';
     RutaNoEncontradaComponent,
     ErrorDeServidorComponent,
     InicioComponent,
-    PqrsComponent // No necesitas agregar AppComponent de nuevo aquí
+    Pqrs2Component // No necesitas agregar AppComponent de nuevo aquí
   ],
   imports: [
     BrowserModule,
