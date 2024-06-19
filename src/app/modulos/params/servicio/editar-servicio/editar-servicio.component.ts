@@ -40,13 +40,13 @@ export class EditarServicioComponent {
     this.servicio.BuscarRegistro(this.recordId).subscribe({
       next: (datos: PlanModel) =>{
         this.obtenerFgDatos["id"].setValue(datos.id);
-        this.obtenerFgDatos["nombre"].setValue(datos.nombrePlan);
+        this.obtenerFgDatos["nombrePlan"].setValue(datos.nombrePlan);
         this.obtenerFgDatos["cantidadBeneficiario"].setValue(datos.cantidadBeneficiario);
         this.obtenerFgDatos["detalle"].setValue(datos.detalle);
         this.obtenerFgDatos["valorPlan"].setValue(datos.valorPlan);
         this.obtenerFgDatos["estado"].setValue(datos.estado);
-        this.nombreArchivoCargado = datos.foto!;
-        this.archivoCargado = true;
+       // this.nombreArchivoCargado = datos.foto!;
+       // this.archivoCargado = true;
       },
       error: (err) =>{
         alert("El registro no existe")
@@ -56,9 +56,8 @@ export class EditarServicioComponent {
 
   ConstruirFormularioDatos() {
     this.fGroup = this.fb.group({
-
       id: ['', [Validators.required]],
-      nombre: ['', [Validators.required]],
+      nombrePlan: ['', [Validators.required]],
       cantidadBeneficiario: ['', [Validators.required]],
       detalle: ['', [Validators.required]],
       valorPlan: ['', [Validators.required]],
@@ -74,7 +73,7 @@ export class EditarServicioComponent {
       this.servicio.EditarRegistro(model).subscribe({
         next: (data: PlanModel) => {
           alert("Información modificada correctamente");
-          this.router.navigate(['/parametros/servicio-listar']);
+          this.router.navigate(['/params/servicio-listar']);
         },
         error: (err: any) => {
           alert("Ha ocurrido un error");
@@ -84,8 +83,8 @@ export class EditarServicioComponent {
   }
 
   obtenerRegistro(): PlanModel {
-    let model = new PlanModel();
-    model.id = parseInt(this.obtenerFgDatos["id"].value);
+    let model = new PlanModel(); 
+    model.id = parseInt(this.obtenerFgDatos["id"].value); 
     model.nombrePlan = this.obtenerFgDatos["nombrePlan"].value;
     model.cantidadBeneficiario = this.obtenerFgDatos["cantidadBeneficiario"].value;
     model.detalle = this.obtenerFgDatos["detalle"].value;

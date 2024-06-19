@@ -1,3 +1,5 @@
+import { ClienteModel } from "./cliente.model";
+
 export class BeneficiarioModel{
   id?: number;
   nombre?: string;
@@ -10,4 +12,5 @@ export class BeneficiarioModel{
   fechaRegistro?: string;
   foto?: string;
   clienteId?: number;
+  cliente?: ClienteModel;
 }

@@ -19,7 +19,7 @@ export class BeneficiariosService {
   listarRegistros(pag: number):Observable<PaginadorBeneficiarioModel>{
     let limit = ConfiguracionPaginacion.registrosPorPagina;
     let skip = (pag - 1) * limit;
-    let url = `${this.urlBase}beneficiario?filter={"limit":${limit}, "skip":${skip}}`;
+    let url = `${this.urlBase}beneficiario?filter={ "include":[{"relation":"cliente"}], "limit":${limit}, "skip":${skip}}`;
     return this.http.get<PaginadorBeneficiarioModel>(url);
 
   }

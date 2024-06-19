@@ -16,7 +16,7 @@ export class ResenasService {
   listarRegistros(pag: number):Observable<PaginadorResenasModel>{
     let limit = ConfiguracionPaginacion.registrosPorPagina;
     let skip = (pag - 1) * limit;
-    let url = `${this.urlBase}resena?filter={"limit":${limit}, "skip":${skip}}`;
+    let url = `${this.urlBase}resena?filter={"include":[{"relation":"cliente"}], "limit":${limit}, "skip":${skip}}`;
     return this.http.get<PaginadorResenasModel>(url);
 
   }

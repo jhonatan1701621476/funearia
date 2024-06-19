@@ -29,7 +29,7 @@
               <td>{{reg.parentesco}}</td>
               <td>{{ reg.celular }}</td>
               <td>{{ reg.direccion }}</td>
-              <td>{{reg.clienteId}}</td>
+              <td>{{reg.cliente?.nombre}} {{reg.cliente?.primerApellido}} {{reg.cliente?.segundoApellido}}</td>
               <td>
                   <a routerLink="/parametros/beneficiario-editar/{{reg.id}}" class="btn orange">Editar Registro </a>&nbsp;
                   <a routerLink="/parametros/beneficiario-eliminar{{reg.id}}" class="btn red">Eliminar Registro </a>
