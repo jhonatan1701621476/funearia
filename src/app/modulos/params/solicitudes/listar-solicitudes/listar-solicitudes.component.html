@@ -22,7 +22,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let reg of ListaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
-                <td>{{ reg.fechaSolicitud}}</td>
+                <td>{{reg.fechaSolicitud}}</td>
                 <td>{{reg.observaciones}}</td>
                 <td>{{reg.estadoSolicitud}}</td>
                 <td>{{reg.beneficiarioId}}</td>

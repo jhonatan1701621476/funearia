@@ -1,6 +1,6 @@
-import { SolicitudesModule } from "../modulos/solicitudes/solicitudes.module";
+import { solicitudesModel } from "../modelos/solicitudes.model";
 
 export class PaginadorSolicitudesModel {
     totalRegistros: number = 0;
-    registros: SolicitudesModule[] = [];
+    registros: solicitudesModel[] = [];
 }

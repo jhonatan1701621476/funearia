@@ -6,27 +6,28 @@ import { solicitudesModel } from '../../modelos/solicitudes.model';
 import { ConfiguracionPaginacion } from '../../config/configuracion.paginacion';
 import { PaginadorSolicitudesModel } from '../../modelos/paginador.solicitudes.model';
 import { ArchivoModel } from '../../modelos/archivo.model';
+import { SeguridadService } from '../seguridad.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SolicitudesService {
+  token =""; // Aquí se almacenará el token de autenticación
   urlBase: string = ConfiguracionRutasBackend.urlNegocio;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private servicioseguridad: SeguridadService) {
+    this.token = this.servicioseguridad.ObtenerTokenLocalStorage();
+  }
 
   /**
    * Listado de ServicioPlan
    * @returns
    */
 
-  listarRegistros():Observable<solicitudesModel[]>{
-    return this.http.get<solicitudesModel[]>(`${this.urlBase}solicitud?filter={"limit":${ConfiguracionPaginacion.registrosPorPagina}}`);
-  }
-
-  listarRegistrosPaginados(pag: number):Observable<PaginadorSolicitudesModel>{
+  listarRegistros(pag: number ):Observable<PaginadorSolicitudesModel>{
     let limit = ConfiguracionPaginacion.registrosPorPagina;
     let skip = (pag - 1) * limit;
-    return this.http.get<PaginadorSolicitudesModel>(`${this.urlBase}solicitud-paginado?filter={"limit":${limit}, "skip":${skip}, "order":"id DESC"}`);
+    let url = `${this.urlBase}solicitud?filter={"limit":${limit}, "skip":${skip}, "order":"id DESC" }`;
+    return this.http.get<PaginadorSolicitudesModel>(url);
   }
 
   AgregarRegistro(registro: solicitudesModel):Observable<solicitudesModel>{

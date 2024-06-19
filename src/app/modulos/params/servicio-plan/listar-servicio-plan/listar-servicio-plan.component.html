@@ -13,14 +13,16 @@
     <table>
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Detalles</th>
+                <th>Id</th>
+                <th>Nombre del Servicio</th>
+                <th>Detalle del Servicio</th>
                 <th>Foto</th>
             </tr>
         </thead>
         <tbody>
             <tr
                 *ngFor="let reg of ListaRegistros | paginate: { itemsPerPage: registroPorPagina, currentPage: pag, totalItems: total }">
+                <td>{{reg.id}}</td>
                 <td>{{reg.nombre}}</td>
                 <td>{{reg.detalles}}</td>
                 <td>{{reg.foto}}</td>

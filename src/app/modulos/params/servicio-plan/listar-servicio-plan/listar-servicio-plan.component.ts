@@ -25,7 +25,7 @@ export class ListarServicioPlanComponent {
   }
 
   ListarRegistros(){
-    this.servicioPlanService.listarRegistrosPaginados(this.pag).subscribe({
+    this.servicioPlanService.listarRegistros(this.pag).subscribe({
       next: (datos) =>{
         this.ListaRegistros = datos.registros;
         this.total = datos.totalRegistros;

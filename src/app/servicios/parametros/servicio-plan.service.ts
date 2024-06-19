@@ -7,27 +7,27 @@ import { ConfiguracionPaginacion } from '../../config/configuracion.paginacion';
 import { ServicioPlanModel } from '../../modelos/servicio-plan.model';
 import { PaginadorServicioPlanModel } from '../../modelos/paginador.servicio-plan.model';
 import { ArchivoModel } from '../../modelos/archivo.model';
+import { SeguridadService } from '../seguridad.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioPlanService {
+  token =""; // Aquí se almacenará el token de autenticación
   urlBase: string = ConfiguracionRutasBackend.urlNegocio;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient , private servicioseguridad: SeguridadService) {
+    this.token = this.servicioseguridad.ObtenerTokenLocalStorage();
+  }
 
   /**
    * Listado de ServicioPlan
    * @returns
    */
 
-  listarRegistros():Observable<ServicioPlanModel[]>{
-    return this.http.get<ServicioPlanModel[]>(`${this.urlBase}servicio-plan?filter={"limit":${ConfiguracionPaginacion.registrosPorPagina}}`);
-  }
-
-  listarRegistrosPaginados(pag: number):Observable<PaginadorPlanModel>{
+  listarRegistros(pag: number):Observable<PaginadorServicioPlanModel>{
     let limit = ConfiguracionPaginacion.registrosPorPagina;
     let skip = (pag - 1) * limit;
-    return this.http.get<PaginadorServicioPlanModel>(`${this.urlBase}servicio-plan-paginado?filter={"limit":${limit}, "skip":${skip}, "order":"id DESC"}`);
+    return this.http.get<PaginadorServicioPlanModel>(`${this.urlBase}servicio-plan?filter={"limit":${limit}, "skip":${skip}, "order":"id DESC"}`);
   }
 
   AgregarRegistro(registro: ServicioPlanModel):Observable<ServicioPlanModel>{
