@@ -1,0 +1,158 @@
+<fieldset class="center container">
+  <legend>Adquisición de un Plan</legend>
+  <!-- <div class="row">
+    <form class="col s12" [formGroup]="cargaArchivoFG">
+      <div class="row">
+                <div class="showImage center-align">
+                    <img *ngIf="!archivoCargado" src="/src/assets/img/default.png" class="imagenPlan" />
+                    <img *ngIf="archivoCargado" src="{{BASE_URL}}ObtenerArchivo/1/{{nombreArchivoCargado}}" class="imagenPlan" />
+                </div>
+              </div>
+      <div class="file-field input-field row">
+        <div class="btn col s3">
+          <span>Seleccionar Archivo</span>
+          <input
+            (change)="CuandoSeleccionaArchivo($event)"
+            name="image"
+            type="file"
+          />
+        </div>
+        <div class="file-path-wrapper col s9">
+          <input class="file-path validate" type="text" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <input
+            type="button"
+            class="btn"
+            value="Subir Archivo"
+            (click)="CargarArchivo()"
+          />
+        </div>
+      </div>
+    </form>
+  </div> -->
+  <div class="row">
+    <form [formGroup]="fGroup">
+      <div class="row">
+
+        <div class="input-field col s4">
+          <input type="hidden" formControlName="id" />
+          <input formControlName="nombrePlan" class="validate" id="nombrePlan" type="text"/>
+          <label for="nombrePlan" data-error="wrong" class="activate" data-success="right">Tipo de Plan</label>
+          <div
+            class="show-errors"
+            *ngIf="
+              obtenerFgDatos['nombrePlan'].errors &&
+              (obtenerFgDatos['nombrePlan'].dirty ||
+                obtenerFgDatos['nombrePlan'].touched)
+            ">
+            <strong>Este campo es obligatorio</strong>
+          </div>
+        </div>
+
+        <div class="input-field col s4">
+          <input formControlName="cantidadBeneficiario" class="validate" id="cantidadBeneficiario" type="number" />
+          <label for="cantidadBeneficiario" data-error="wrong" class="activate" data-success="right">Cantidad Beneficiarios</label>
+          <div
+            class="show-errors"
+            *ngIf="
+              obtenerFgDatos['cantidadBeneficiario'].errors &&
+              (obtenerFgDatos['cantidadBeneficiario'].dirty ||
+                obtenerFgDatos['cantidadBeneficiario'].touched)
+            ">
+            <strong>Este campo es obligatorio</strong>
+          </div>
+        </div>
+
+        <div class="input-field col s6">
+          <input formControlName="valorPlan" class="validate" id="valorPlan" type="text" />
+          <label for="valorPlan" data-error="wrong" class="activate" data-success="right">Valor a pagar del Plan</label>
+          <div
+            class="show-errors"
+            *ngIf="
+              obtenerFgDatos['valorPlan'].errors &&
+              (obtenerFgDatos['valorPlan'].dirty ||
+                obtenerFgDatos['valorPlan'].touched)
+            ">
+            <strong>Este campo es obligatorio</strong>
+          </div>
+        </div>
+
+        <div class="input-field col s4">
+          <input type="hidden" formControlName="id" />
+          <input formControlName="clientePlan" class="validate" id="clientePlan" type="text"/>
+          <label for="clientePlan" data-error="wrong" class="activate" data-success="right">Nombre Completo del Cliente</label>
+          <div
+            class="show-errors"
+            *ngIf="
+              obtenerFgDatos['clientePlan'].errors &&
+              (obtenerFgDatos['clientePlan'].dirty ||
+                obtenerFgDatos['clientePlan'].touched)
+            ">
+            <strong>Este campo es obligatorio</strong>
+          </div>
+        </div>
+
+        <div class="input-field col s6">
+          <input type="hidden" formControlName="id" />
+          <input formControlName="beneficiarioPlan" class="validate" id="beneficiarioPlan" type="text"/>
+          <label for="beneficiarioPlan" data-error="wrong" class="activate" data-success="right">Nombre Completo del Beneficiario</label>
+          <div
+            class="show-errors"
+            *ngIf="
+              obtenerFgDatos['beneficiarioPlan'].errors &&
+              (obtenerFgDatos['beneficiarioPlan'].dirty ||
+                obtenerFgDatos['beneficiarioPlan'].touched)
+            ">
+            <strong>Este campo es obligatorio</strong>
+          </div>
+        </div>
+
+        <div class="input-field col s4">
+          <input type="hidden" formControlName="id" />
+          <input formControlName="clienteCorreo" class="validate" id="clienteCorreo" type="text"/>
+          <label for="clienteCorreo" data-error="wrong" class="activate" data-success="right">Correo del Cliente</label>
+          <div
+            class="show-errors"
+            *ngIf="
+              obtenerFgDatos['clienteCorreo'].errors &&
+              (obtenerFgDatos['clienteCorreo'].dirty ||
+                obtenerFgDatos['clienteCorreo'].touched)
+            ">
+            <strong>Este campo es obligatorio</strong>
+          </div>
+        </div>
+
+        <div class="input-field col s11">
+          <input type="hidden" formControlName="id" />
+          <input formControlName="servicioPlan" class="validate" id="servicioPlan" type="text"/>
+          <label for="servicioPlan" data-error="wrong" class="activate" data-success="right">Servicios que desea incluir</label>
+          <div
+            class="show-errors"
+            *ngIf="
+              obtenerFgDatos['servicioPlan'].errors &&
+              (obtenerFgDatos['servicioPlan'].dirty ||
+                obtenerFgDatos['servicioPlan'].touched)
+            ">
+            <strong>Este campo es obligatorio</strong>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <a routerLink="/params/servicio-listar" class="btn red">Cancelar</a
+          >&nbsp;
+          <button
+            (click)="EditaRegistro()"
+            class="btn waves-effect waves-light">
+            Adquirir
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</fieldset>
+

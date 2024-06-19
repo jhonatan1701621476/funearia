@@ -35,6 +35,7 @@ import { EliminarSedesFunerariasComponent } from './sedes-funerarias/eliminar-se
 import { ListarSolicitudesComponent } from './solicitudes/listar-solicitudes/listar-solicitudes.component';
 import { ComprarServicioComponent } from './servicio/comprar-servicio/comprar-servicio.component';
 import { ListarServicioPlanComponent } from './servicio-plan/listar-servicio-plan/listar-servicio-plan.component';
+import { DiligenciarServicioComponent } from './servicio/diligenciar-servicio/diligenciar-servicio.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path: "servicio-comprar",
     component: ComprarServicioComponent
+  },
+  {
+    path: "servicio-diligenciar",
+    component: DiligenciarServicioComponent
   },
   {
     path: "cliente-listar",

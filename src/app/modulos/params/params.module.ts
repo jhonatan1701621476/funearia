@@ -39,6 +39,7 @@ import { ListarSedesFunerariasComponent } from './sedes-funerarias/listar-sedes-
 import { ListarServicioPlanComponent } from './servicio-plan/listar-servicio-plan/listar-servicio-plan.component';
 import { ListarSolicitudesComponent } from './solicitudes/listar-solicitudes/listar-solicitudes.component';
 import { ComprarServicioComponent } from './servicio/comprar-servicio/comprar-servicio.component';
+import { DiligenciarServicioComponent } from './servicio/diligenciar-servicio/diligenciar-servicio.component';
 
 
 
@@ -79,8 +80,9 @@ import { ComprarServicioComponent } from './servicio/comprar-servicio/comprar-se
     ListarSedesFunerariasComponent,
     ListarServicioPlanComponent,
     ListarSolicitudesComponent,
-    ComprarServicioComponent
- 
+    ComprarServicioComponent,
+    DiligenciarServicioComponent
+
   ],
   imports: [
     CommonModule,
